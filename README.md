@@ -1,1 +1,3 @@
-# se_final_project_frontend
+# Final Project - MSFR App
+
+- Custom Web Application - MSFR, Man's Search For Reading Web App
