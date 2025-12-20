@@ -9,8 +9,9 @@
 }
 
 .banner__act-button {
+  padding: 16px 24px;
   position: absolute;
-  bottom: 45%;
+  bottom: 40%;
   right: 40%;
   z-index: 0;
   width: 300px;
@@ -22,9 +23,11 @@
   font-family: "Roboto", Arial, sans-serif;
   font-size: 20px;
   font-weight: 600;
+  transition: 0.15s;
 }
 
 .banner__act-button:hover {
   background-image: linear-gradient(to right, #eb7200, #ff383c);
   box-shadow: 0 0 10px 5px #eb7200;
+  cursor: pointer;
 }

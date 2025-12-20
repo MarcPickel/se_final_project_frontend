@@ -4,21 +4,45 @@
 }
 
 .nav {
+  padding: 10px 20px 15px;
   display: flex;
   justify-content: center;
   gap: 50px;
 }
 
 .nav__button {
-  width: 200px;
+  padding: 10px 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 8px;
+  width: 250px;
   border-radius: 0;
+  border: none;
+  text-decoration: none;
+  color: #fff;
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 20px;
+  background-color: #000;
+  transition: background-color 0.3s ease-in-out;
 }
 
 .nav__button:hover {
+  background-color: #246;
+  cursor: pointer;
 }
 
 .nav__button-icon {
+  width: 20px;
+  height: 20px;
+  color: #fff;
+  transition: transform 0.3s ease-in;
+}
+
+.nav__button:hover .nav__button-icon {
+  transform: rotate(-30deg);
 }
 
 .nav__button_active {
+  background-color: #246;
 }
