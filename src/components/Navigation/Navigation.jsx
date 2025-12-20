@@ -1,5 +1,11 @@
 import "./Navigation.css";
 
+import swords from "../../assets/swords-icon.svg";
+import feather from "../../assets/feather-icon.svg";
+import bookmark from "../../assets/bookmark-icon.svg";
+import book from "../../assets/book-icon.svg";
+import home from "../../assets/home-icon.svg";
+
 function Navigation() {
   return (
     <nav className="nav">
