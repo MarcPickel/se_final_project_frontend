@@ -1,7 +1,11 @@
+import LibraryBanner from "../../assets/man-reading-book.jpg";
+
 function Banner() {
-  <>
-    <img className="banner" src="" alt="" />
-  </>;
+  return (
+    <>
+      <img className="banner" src={LibraryBanner} alt="Gentleman reading" />
+    </>
+  );
 }
 
 export default Banner;

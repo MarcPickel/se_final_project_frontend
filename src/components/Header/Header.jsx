@@ -1,18 +1,33 @@
 import "./Header.css";
 
 import { NavLink } from "react-router-dom";
-// import { useContext } from "";
-// import CurrentUserContext from "";
+import { useContext } from "react";
+import CurrentUserContext from "../../contexts/CurrentUserContext.jsx";
 
 import logo from "../../assets/msfr-logo.svg";
+import defaultAvatar from "../../assets/default-avatar.svg";
 
 function Header() {
+  //const { userData, isSignedIn } = useContext(CurrentUserContext);
+
   return (
     <header className="header">
-      <NavLink to="/">
-        <img className="header__logo" src={logo} alt="MSFR" />
-      </NavLink>
-      <h1 className="header__title"></h1>
+      <img className="header__logo" src={logo} alt="MSFR" />
+
+      <h1 className="header__title">Man's Search For Reading</h1>
+      <>
+        <div className="header__user-content">
+          <button className="header__signout-button" type="button">
+            Sign Out
+          </button>
+          <p className="header__username">Marc Pickelman</p>
+          <img
+            className="header__avatar"
+            src={defaultAvatar}
+            alt="Marc Pickelman"
+          />
+        </div>
+      </>
     </header>
   );
 }

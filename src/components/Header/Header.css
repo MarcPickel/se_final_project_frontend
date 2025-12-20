@@ -1,0 +1,30 @@
+@font-face {
+  src: url("../../vendor/fonts/Cinzel/Cinzel-VariableFont_wght.ttf");
+  font-family: "Cinzel";
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  font-family: "Cinzel", "Times New Roman", serif;
+}
+
+.header__logo {
+}
+
+.header__title {
+}
+
+.header__user-content {
+  display: flex;
+  align-items: center;
+}
+
+.header__signout-button {
+}
+
+.header__username {
+}
+
+.header__avatar {
+}
