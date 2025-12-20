@@ -1,0 +1,24 @@
+@font-face {
+  src: url("../../vendor/fonts/Roboto/Roboto-VariableFont_wdth\,wght.ttf");
+  font-family: "Roboto";
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+
+.nav__button {
+  width: 200px;
+  border-radius: 0;
+}
+
+.nav__button:hover {
+}
+
+.nav__button-icon {
+}
+
+.nav__button_active {
+}
