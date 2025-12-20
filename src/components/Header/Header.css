@@ -4,27 +4,49 @@
 }
 
 .header {
+  padding: 20px 30px;
   display: flex;
   align-items: center;
   font-family: "Cinzel", "Times New Roman", serif;
 }
 
 .header__logo {
+  width: 50px;
 }
 
 .header__title {
+  margin: 0 0 0 24px;
+  font-size: 32px;
+  font-weight: 400;
+  color: #fff;
 }
 
 .header__user-content {
+  margin: 0 0 0 auto;
   display: flex;
   align-items: center;
 }
 
 .header__signout-button {
+  padding: 8px 16px;
+  background-color: #246;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  border-radius: 20px;
+}
+
+.header__signout-button:hover {
+  opacity: 0.7;
+  box-shadow: 0 0 5px 2px #c4c4c4;
 }
 
 .header__username {
+  margin: 0 0 0 24px;
+  font-size: 20px;
+  color: #fff;
 }
 
 .header__avatar {
+  margin: 0 0 0 12px;
 }

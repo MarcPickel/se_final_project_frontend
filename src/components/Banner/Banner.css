@@ -1,0 +1,30 @@
+@font-face {
+  src: url("../../vendor/fonts/Roboto/Roboto-VariableFont_wdth\,wght.ttf");
+  font-family: "Roboto";
+}
+
+.banner {
+  width: 100%;
+  position: relative;
+}
+
+.banner__act-button {
+  position: absolute;
+  bottom: 45%;
+  right: 40%;
+  z-index: 0;
+  width: 300px;
+  border-radius: 50px;
+  border: none;
+  background-color: #eb7200;
+  opacity: 0.9;
+  color: #000;
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.banner__act-button:hover {
+  background-image: linear-gradient(to right, #eb7200, #ff383c);
+  box-shadow: 0 0 10px 5px #eb7200;
+}
