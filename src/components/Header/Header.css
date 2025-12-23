@@ -4,7 +4,8 @@
 }
 
 .header {
-  padding: 0 30px;
+  margin: 0 0 10px;
+  padding: 0 20px;
   display: flex;
   align-items: center;
   font-family: "Cinzel", "Times New Roman", serif;
