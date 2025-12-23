@@ -14,7 +14,7 @@ function Header() {
     <header className="header">
       <img className="header__logo" src={logo} alt="MSFR" />
 
-      <h1 className="header__title">Man's Search For Reading</h1>
+      <p className="header__title">Man's Search For Reading</p>
       <>
         <div className="header__user-content">
           <button className="header__signout-button" type="button">
