@@ -3,8 +3,9 @@ import { Routes, Route } from "react-router-dom";
 
 import "./App.css";
 import Header from "../Header/Header.jsx";
-import Banner from "../Banner/Banner.jsx";
 import Navigation from "../Navigation/Navigation.jsx";
+
+import Main from "../Main/Main.jsx";
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
       <div className="page__content">
         <Header />
         <Navigation />
-        <Banner />
+        <Main />
       </div>
     </div>
   );

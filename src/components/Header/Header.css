@@ -5,10 +5,11 @@
 
 .header {
   margin: 0 0 10px;
-  padding: 0 20px;
+  padding: 0 20px 10px;
   display: flex;
   align-items: center;
   font-family: "Cinzel", "Times New Roman", serif;
+  border-bottom: solid 1px #fff;
 }
 
 .header__logo {

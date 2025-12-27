@@ -1,0 +1,16 @@
+.main {
+  color: white;
+}
+
+.main__intro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main__image {
+}
+
+.main__image_ship {
+  width: 325px;
+}
