@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 import { useContext } from "react";
 import CurrentUserContext from "../../contexts/CurrentUserContext.jsx";
 
-import logo from "../../assets/msfr-logo.svg";
+import logo from "../../assets/msfr__logo_small.svg";
 import defaultAvatar from "../../assets/default-avatar.svg";
 
 function Header() {

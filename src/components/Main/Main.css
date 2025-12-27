@@ -1,6 +1,6 @@
 .main {
   height: 100%;
-  background-color: black;
+  background-color: #000;
   /* Create multiple layers of stars using radial gradients */
   background-image: radial-gradient(
       white,

@@ -6,6 +6,7 @@ import Header from "../Header/Header.jsx";
 import Navigation from "../Navigation/Navigation.jsx";
 
 import Main from "../Main/Main.jsx";
+import Footer from "../Footer/Footer.jsx";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Header />
         <Navigation />
         <Main />
+        <Footer />
       </div>
     </div>
   );
