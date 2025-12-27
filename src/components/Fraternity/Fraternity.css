@@ -1,0 +1,127 @@
+@keyframes wobble {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(5deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@font-face {
+  src: url("../../vendor/fonts/Roboto/Roboto-VariableFont_wdth\,wght.ttf");
+  font-family: "Roboto";
+}
+
+.fraternity {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.fraternity-content {
+  margin: 50px 0;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.fraternity__subtitle {
+  margin: 0 0 14px;
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 30px;
+  font-weight: 400;
+  color: #eb7200;
+}
+
+.fraternity__text {
+  margin: 0 0 20px;
+  flex-wrap: wrap;
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 20px;
+  text-align: center;
+}
+
+.fraternity__row {
+  display: flex;
+  gap: 50px;
+}
+
+.fraternity__column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.fraternity__circle {
+  width: 88px;
+  height: 88px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+}
+
+.fraternity__circle_red {
+  background-image: linear-gradient(to bottom, #e03a3d, #7a2021);
+  box-sizing: border-box;
+  border: solid 4px #7a2021;
+}
+
+.fraternity__circle_blue {
+  background-image: linear-gradient(to bottom, #224466, #4488cc);
+  box-sizing: border-box;
+  border: solid 4px #224466;
+}
+
+.fraternity__circle_orange {
+  background-image: linear-gradient(to bottom, #eb7200, #e03a3d);
+  box-sizing: border-box;
+  border: solid 4px #e03a3d;
+}
+
+.fraternity__book-icon {
+  animation: wobble 3s linear infinite;
+}
+
+.fraternity__heart-icon {
+  animation: pulse 2s linear infinite;
+}
+
+.fraternity__flower-icon {
+  animation: rotate 30s linear infinite;
+}
+
+.fraternity__icon-text {
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 20px;
+}

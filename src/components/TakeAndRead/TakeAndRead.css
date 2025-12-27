@@ -1,0 +1,37 @@
+@font-face {
+  src: url("../../vendor/fonts/Roboto/Roboto-VariableFont_wdth\,wght.ttf");
+  font-family: "Roboto";
+}
+
+.take-and-read {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Roboto", Arial, sans-serif;
+}
+
+.take-and-read-content {
+  margin: 50px 0;
+  max-width: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.take-and-read__image {
+  margin-right: 14px;
+  width: 200px;
+}
+
+.take-and-read__subtitle {
+  margin: 0 0 14px;
+  font-size: 30px;
+  font-weight: 400;
+  color: #eb7200;
+}
+
+.take-and-read__text {
+  margin: 0 0 14px;
+  flex-wrap: wrap;
+  font-size: 20px;
+}

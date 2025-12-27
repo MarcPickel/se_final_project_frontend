@@ -1,16 +1,24 @@
 .main {
+  height: 100%;
+  background-color: black;
+  /* Create multiple layers of stars using radial gradients */
+  background-image: radial-gradient(
+      white,
+      rgba(255, 255, 255, 0.2) 2px,
+      transparent 40px
+    ),
+    radial-gradient(white, rgba(255, 255, 255, 0.15) 1px, transparent 30px),
+    radial-gradient(white, rgba(255, 255, 255, 0.1) 2px, transparent 40px),
+    radial-gradient(
+      rgba(255, 255, 255, 0.4),
+      rgba(255, 255, 255, 0.1) 2px,
+      transparent 30px
+    );
+
+  /* Set the size of each gradient layer to control star density */
+  background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px;
+
+  /* Randomize initial positions for better scatter */
+  background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
   color: white;
-}
-
-.main__intro {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.main__image {
-}
-
-.main__image_ship {
-  width: 325px;
 }

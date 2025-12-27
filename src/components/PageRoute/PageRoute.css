@@ -1,0 +1,30 @@
+.page-route {
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 20px;
+  border-top: solid 1px #fff;
+  border-bottom: solid 1px #fff;
+}
+
+.page-route__text {
+  margin: 0;
+  color: #eb7200;
+}
+
+.page-route__text:hover {
+  color: #fb8c25;
+  cursor: pointer;
+}
+
+.page-route__arrows {
+  color: #eb7200;
+  transition: transform 0.3s ease-in-out;
+}
+
+.page-route__text:hover + .page-route__arrows {
+  transform: translateX(5px);
+}

@@ -1,0 +1,53 @@
+@font-face {
+  src: url("../../vendor/fonts/Roboto/Roboto-VariableFont_wdth\,wght.ttf");
+  font-family: "Roboto";
+}
+
+.intro {
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.intro-content {
+  max-width: 1000px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.intro__image {
+  margin-right: 14px;
+  width: 325px;
+}
+
+.intro__title {
+  margin: 0 14px 0 0;
+  padding-right: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  border-right: solid 2px #ffffffbf;
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 30px;
+  font-weight: 400;
+  color: #eb7200;
+}
+
+.intro__column {
+  display: flex;
+  flex-direction: column;
+}
+
+.intro__text {
+  margin: 0 0 20px;
+  display: inline;
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 20px;
+  opacity: 0.9;
+}
+
+.intro__text_orange {
+  margin: 0;
+  color: #eb7200;
+}

@@ -1,0 +1,39 @@
+.wisdom-virtue {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: url("../../assets/winter-lights-and-atmosphere.jpg") center /
+    cover no-repeat;
+  font-family: "Roboto", Arial, sans-serif;
+}
+
+.wisdom-virtue-content {
+  margin: 50px 0;
+}
+
+.wisdom-virtue__subtitle {
+  margin: 0 0 14px;
+  text-align: center;
+  font-size: 30px;
+  font-weight: 400;
+  color: #eb7200;
+}
+
+.wisdom-virtue__row {
+  max-width: 800px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wisdom-virtue__text {
+  margin: 0 14px 0 0;
+  flex-wrap: wrap;
+  text-align: end;
+  font-size: 20px;
+}
+
+.wisdom-virtue__image {
+  width: 300px;
+}
