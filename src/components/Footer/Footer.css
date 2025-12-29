@@ -1,5 +1,93 @@
+@font-face {
+  src: url("../../vendor/fonts/Roboto/Roboto-VariableFont_wdth\,wght.ttf");
+  font-family: "Roboto";
+}
+
 .footer {
   color: white;
   background-color: #000;
   border-top: 1px solid #fff;
+  font-family: "Roboto", Arial, sans-serif;
+}
+
+.footer-content {
+  margin: 50px 100px;
+}
+
+.footer__columns {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
+
+.footer__column {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.footer__logo-row {
+  display: flex;
+}
+
+.footer__logo {
+  width: 200px;
+}
+
+.footer__title {
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.footer__address {
+  margin: 0 0 8px;
+  font-size: 18px;
+  line-height: 20px;
+}
+
+.footer__email {
+  margin: 0 0 8px;
+  font-size: 18px;
+  line-height: 20px;
+}
+
+.footer__phone {
+  margin: 0 0 8px;
+  font-size: 18px;
+  line-height: 20px;
+}
+
+.footer__social-links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer__link {
+  margin-bottom: 8px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 20px;
+}
+
+.footer__link:hover {
+  opacity: 0.6;
+}
+
+.footer__linkedin-icon {
+}
+
+.footer__link_social {
+  margin-bottom: 0;
+}
+
+.footer__copyright {
+  margin: 0;
+  display: flex;
+  justify-content: end;
+  font-size: 16px;
+  line-height: 20px;
+  opacity: 0.8;
 }

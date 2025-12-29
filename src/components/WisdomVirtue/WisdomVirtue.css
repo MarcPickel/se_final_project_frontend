@@ -1,3 +1,8 @@
+@font-face {
+  src: url("../../vendor/fonts/Roboto/Roboto-VariableFont_wdth\,wght.ttf");
+  font-family: "Roboto";
+}
+
 .wisdom-virtue {
   display: flex;
   flex-direction: column;
