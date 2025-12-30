@@ -12,9 +12,11 @@ function Header() {
 
   return (
     <header className="header">
-      <img className="header__logo" src={logo} alt="MSFR" />
-
+      <NavLink to="/">
+        <img className="header__logo" src={logo} alt="MSFR" />
+      </NavLink>
       <p className="header__title">Man's Search For Reading</p>
+
       <>
         <div className="header__user-content">
           <button className="header__signout-button" type="button">

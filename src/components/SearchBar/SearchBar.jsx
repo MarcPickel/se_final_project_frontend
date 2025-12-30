@@ -1,24 +1,26 @@
 import "./SearchBar.css";
 
+import glass from "../../assets/magnifying-glass-icon.svg";
+
 function SearchBar() {
   return (
     <div className="searchbar">
       <search>
         <form>
-          <div>
+          <div className="searchbar__container">
             <input
-              type="search"
-              name="qeury"
+              type="text"
+              name="search"
               className="searchbar__input"
               id="bookSearch"
               placeholder="Search for books..."
             ></input>
-            <button>
-              <img />
-            </button>
+            <img className="searchbar__button-icon" src={glass} alt="search" />
           </div>
         </form>
       </search>
     </div>
   );
 }
+
+export default SearchBar;

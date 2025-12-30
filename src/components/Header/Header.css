@@ -16,6 +16,10 @@
   width: 50px;
 }
 
+.header__logo:hover {
+  cursor: pointer;
+}
+
 .header__title {
   margin: 0 0 0 24px;
   font-size: 32px;

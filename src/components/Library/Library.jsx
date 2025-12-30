@@ -1,6 +1,7 @@
 import "./Library.css";
 
 import SearchBar from "../SearchBar/SearchBar.jsx";
+import BooksSection from "../BooksSection/BooksSection.jsx";
 
 {
   /*import { NavLink } from "react-router-dom";
@@ -14,7 +15,9 @@ function Library() {
       <section className="library__sidebar">
         <SearchBar />
       </section>
-      <section className="library__books-section"></section>
+      <section className="library__books-section">
+        <BooksSection />
+      </section>
     </div>
   );
 }

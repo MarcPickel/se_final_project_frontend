@@ -1,5 +1,7 @@
 import "./Navigation.css";
 
+import { NavLink } from "react-router-dom";
+
 import swords from "../../assets/swords-icon-white.svg";
 import feather from "../../assets/feather-icon-white.svg";
 import bookmark from "../../assets/bookmark-icon-white.svg";
@@ -10,10 +12,12 @@ import compass from "../../assets/compass-icon-white.svg";
 function Navigation() {
   return (
     <nav className="nav">
-      <button className="nav__button" type="button">
-        <img className="nav__button-icon" src={book} alt="Book" />
-        Library
-      </button>
+      <NavLink to="/library">
+        <button className="nav__button" type="button">
+          <img className="nav__button-icon" src={book} alt="Book" />
+          Library
+        </button>
+      </NavLink>
       <button className="nav__button" type="button">
         <img className="nav__button-icon" src={bookmark} alt="Bookmark" />
         My Books

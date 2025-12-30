@@ -101,7 +101,7 @@ function App() {
         <Header />
         <Navigation />
         <Routes>
-          {/*<Route path="/" element={<Main />}></Route>*/}
+          <Route path="/" element={<Main />}></Route>
           <Route path="/library" element={<Library />}></Route>
         </Routes>
         <Footer />
