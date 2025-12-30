@@ -10,10 +10,11 @@ import Library from "../Library/Library.jsx";
 import Footer from "../Footer/Footer.jsx";
 
 function App() {
-  {
-    /*const [activeModal, setActiveModal] = useState("");
+  const [activeSearch, setActiveSearch] = useState("");
+  const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({});
-
+  {
+    /*
   const [userData, setUserData] = useState(null);
   const [isSignedIn, setIsSignedIn] = useState(false);
 
