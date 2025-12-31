@@ -12,10 +12,10 @@ import CurrentUserContext from "../../contexts/CurrentUserContext.jsx";*/
 function Library({ onCardClick, bookItems, onCardSave }) {
   return (
     <div className="library">
-      <section className="library__sidebar">
+      <section>
         <SearchBar />
       </section>
-      <section className="library__books-section">
+      <section>
         <BooksSection
           onCardClick={onCardClick}
           bookItems={bookItems}

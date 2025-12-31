@@ -20,12 +20,10 @@ function ItemCard({ item, onCardClick, onCardSave }) {
 
   return (
     <li className="card">
-      <div className="card__info">
-        <img
-          className="card__image"
-          src="https://covers.openlibrary.org/b/id/14627564-M.jpg"
-        />
-        {currentUser.isLoggedIn && (
+      <div>
+        <div className="card__image-container">
+          <img className="card__image" src={item.cover} alt={item.title} />
+          {/*currentUser.isLoggedIn && (
           <button
             className={`card__save-button ${
               isSaved ? itemSaveButtonClassName : ""
@@ -33,9 +31,10 @@ function ItemCard({ item, onCardClick, onCardSave }) {
             type="button"
             onClick={handleSave}
           ></button>
-        )}
-        <h2 className="card__title">The Two Towers</h2>
-        <p className="card__text">J.R.R. Tolkien</p>
+        )*/}
+        </div>
+        <h2 className="card__title">{item.title}</h2>
+        <p className="card__text">{item.author}</p>
       </div>
     </li>
   );

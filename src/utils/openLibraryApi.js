@@ -6,7 +6,7 @@ import { checkResponse } from "./api.js";
 
 // param = q, title, or author
 
-export const getSearch = () => {
+export const getSearch = (param, value) => {
   return fetch(`https://openlibrary.org/search.json?${param}=${value}`).then(
     checkResponse
   );
@@ -24,29 +24,42 @@ export const filterSearchData = (data) => {
 
 // Search Covers - Search API
 
-export const getBookCover = () => {
+export const getBookCover = (cover_edition_key) => {
   return fetch(
     `https://covers.openlibrary.org/b/olid/${cover_edition_key}.jpg`
   ).then(checkResponse);
 };
 
-// const cover_edition_key = OL51694024M;
-
+// cover_edition_key: OL51694024M;
 // example: https://covers.openlibrary.org/b/olid/OL51694024M.jpg
+
+// cover_id: 240727
+// example: https://covers.openlibrary.org/b/id/240727-M.jpg
 
 // Search by Subject - Subject API
 
 // param = book, author, subject
 
-export const getSubject = () => {
+export const getSubject = (value) => {
   return fetch(`https://openlibrary.org/subjects/${value}.json?limit=50`).then(
     checkResponse
   );
 };
 
+export const filterSubjectData = (data) => {
+  return data.works.map((work) => ({
+    title: work.title,
+    author: work.authors?.[0]?.name || work.authors?.name || "Unknown Author",
+    cover: work.cover_edition_key
+      ? `https://covers.openlibrary.org/b/olid/${work.cover_edition_key}.jpg`
+      : `https://covers.openlibrary.org/b/id/${work.cover_id}-M.jpg`,
+    key: work.key,
+  }));
+};
+
 // Search by Author - Author API
 
-export const getAuthor = () => {
+export const getAuthor = (value) => {
   return fetch(`https://openlibrary.org/search/authors.json?q=${value}`).then(
     checkResponse
   );
@@ -54,7 +67,7 @@ export const getAuthor = () => {
 
 // Search by Work - Works API
 
-export const getWork = () => {
+export const getWork = (key) => {
   return fetch(`https://openlibrary.org/works/${key}.json`).then(checkResponse);
 };
 

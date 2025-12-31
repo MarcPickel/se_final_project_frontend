@@ -9,11 +9,13 @@ import Main from "../Main/Main.jsx";
 import Library from "../Library/Library.jsx";
 import Footer from "../Footer/Footer.jsx";
 
+import { defaultSubject } from "../../utils/constants.js";
 import {
   getSearch,
   filterSearchData,
   getBookCover,
   getSubject,
+  filterSubjectData,
   getAuthor,
   getWork,
 } from "../../utils/openLibraryApi.js";
@@ -107,11 +109,26 @@ function App() {
   };*/
   }
 
-  useEffect(() => {
+  {
+    // This would be a good useEffect for the MyBooks Page,
+    // because it would check the Database through the API to fetch the saved books
+    /*useEffect(() => {
+    const classics = "classics";
+
     getSubject(classics)
       .then((data) => {
         const itemsArray = Array.isArray(data?.data) ? data.data : [];
         setBookItems(itemsArray);
+      })
+      .catch(console.error);
+  }, []);*/
+  }
+
+  useEffect(() => {
+    getSubject(defaultSubject)
+      .then((data) => {
+        let filteredData = filterSubjectData(data);
+        setBookItems(filteredData);
       })
       .catch(console.error);
   }, []);
@@ -125,13 +142,7 @@ function App() {
           <Route path="/" element={<Main />}></Route>
           <Route
             path="/library"
-            element={
-              <Library
-                onCardClick={handleCardClick}
-                bookItems={bookItems}
-                onCardSave={handleCardSave}
-              />
-            }
+            element={<Library bookItems={bookItems} />}
           ></Route>
         </Routes>
         <Footer />
