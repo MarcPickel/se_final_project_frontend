@@ -1,16 +1,14 @@
-export const index = [book, author, subjects];
-
 export const bookOptions = [
   {
-    imageUrl: "https://covers.openlibrary.org/b/id/14627564-M.jpg",
-    title: "",
-    author: "",
+    cover: "https://covers.openlibrary.org/b/id/14627564-M.jpg",
+    title: "The Two Towers",
+    author: "J.R.R. Tolkien",
   },
-  { imageUrl: "", title: "", author: "" },
-  { imageUrl: "", title: "", author: "" },
-  { imageUrl: "", title: "", author: "" },
-  { imageUrl: "", title: "", author: "" },
-  { imageUrl: "", title: "", author: "" },
-  { imageUrl: "", title: "", author: "" },
-  { imageUrl: "", title: "", author: "" },
+  { cover: "", title: "", author: "" },
+  { cover: "", title: "", author: "" },
+  { cover: "", title: "", author: "" },
+  { cover: "", title: "", author: "" },
+  { cover: "", title: "", author: "" },
+  { cover: "", title: "", author: "" },
+  { cover: "", title: "", author: "" },
 ];

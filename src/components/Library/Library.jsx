@@ -9,14 +9,18 @@ import { useContext } from "react";
 import CurrentUserContext from "../../contexts/CurrentUserContext.jsx";*/
 }
 
-function Library() {
+function Library({ onCardClick, bookItems, onCardSave }) {
   return (
     <div className="library">
       <section className="library__sidebar">
         <SearchBar />
       </section>
       <section className="library__books-section">
-        <BooksSection />
+        <BooksSection
+          onCardClick={onCardClick}
+          bookItems={bookItems}
+          onCardSave={onCardSave}
+        />
       </section>
     </div>
   );

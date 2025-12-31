@@ -9,9 +9,20 @@ import Main from "../Main/Main.jsx";
 import Library from "../Library/Library.jsx";
 import Footer from "../Footer/Footer.jsx";
 
+import {
+  getSearch,
+  filterSearchData,
+  getBookCover,
+  getSubject,
+  getAuthor,
+  getWork,
+} from "../../utils/openLibraryApi.js";
+
 function App() {
   const [activeSearch, setActiveSearch] = useState("");
+  const [activeButton, setActiveButton] = useState("");
   const [activeModal, setActiveModal] = useState("");
+  const [bookItems, setBookItems] = useState([]);
   const [selectedCard, setSelectedCard] = useState({});
   {
     /*
@@ -96,6 +107,15 @@ function App() {
   };*/
   }
 
+  useEffect(() => {
+    getSubject(classics)
+      .then((data) => {
+        const itemsArray = Array.isArray(data?.data) ? data.data : [];
+        setBookItems(itemsArray);
+      })
+      .catch(console.error);
+  }, []);
+
   return (
     <div className="page">
       <div className="page__content">
@@ -103,7 +123,16 @@ function App() {
         <Navigation />
         <Routes>
           <Route path="/" element={<Main />}></Route>
-          <Route path="/library" element={<Library />}></Route>
+          <Route
+            path="/library"
+            element={
+              <Library
+                onCardClick={handleCardClick}
+                bookItems={bookItems}
+                onCardSave={handleCardSave}
+              />
+            }
+          ></Route>
         </Routes>
         <Footer />
       </div>
