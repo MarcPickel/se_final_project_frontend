@@ -24,6 +24,7 @@ import {
 
 function App() {
   const [isActive, setIsActive] = useState(false);
+  const [activeTab, setActiveTab] = useState(false);
   const [activeModal, setActiveModal] = useState("");
   const [bookItems, setBookItems] = useState([]);
   const [selectedCard, setSelectedCard] = useState({});
@@ -129,6 +130,8 @@ function App() {
       .catch(console.error);
   }, []);*/
   }
+
+  // Search Functionability
 
   const handleSearch = (value) => {
     getSearch(defaultParam, value).then((data) => {

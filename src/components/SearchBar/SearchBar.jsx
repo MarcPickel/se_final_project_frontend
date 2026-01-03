@@ -1,7 +1,5 @@
 import "./SearchBar.css";
 
-import { useState } from "react";
-
 import glass from "../../assets/magnifying-glass-icon.svg";
 
 function SearchBar({
