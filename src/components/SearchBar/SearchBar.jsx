@@ -1,29 +1,38 @@
 import "./SearchBar.css";
 
-import useSearch from "../../hooks/useSearch.js";
-import { useEffect } from "react";
+import { useState } from "react";
+
 import glass from "../../assets/magnifying-glass-icon.svg";
 
-function SearchBar({ activeSearch }) {
-  const defaultValue = { search: "" };
-  const { value, setValue, handleChange } = useSearch(defaultValue);
+function SearchBar({
+  inputValue,
+  handleSearch,
+  handleChange,
+  isActive,
+  setIsActive,
+}) {
+  function handleFocus() {
+    setIsActive(true);
+  }
 
-  useEffect(() => {
-    if (activeSearch)
-      setValue({
-        search: value || "",
-      });
-  }, [activeSearch]);
+  function handleBlur() {
+    setIsActive(false);
+  }
 
   function handleSubmit(evt) {
     evt.preventDefault();
+    handleSearch(inputValue);
   }
 
   return (
     <div className="searchbar">
       <search>
-        <form>
-          <div className="searchbar__container">
+        <form onSubmit={handleSubmit}>
+          <div
+            className={`searchbar__container ${
+              isActive ? "searchbar__container_active" : ""
+            }`}
+          >
             <input
               id="search-book"
               type="text"
@@ -32,8 +41,10 @@ function SearchBar({ activeSearch }) {
               placeholder="Search for books..."
               minLength="1"
               maxLength="30"
-              value={value.search}
+              value={inputValue}
               onChange={handleChange}
+              onFocus={handleFocus}
+              onBlur={handleBlur}
             ></input>
             <img className="searchbar__button-icon" src={glass} alt="search" />
           </div>

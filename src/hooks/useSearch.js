@@ -1,14 +1,13 @@
 import { useState } from "react";
 
 function useSearch(defaultValue) {
-  const [value, setValue] = useState(defaultValue);
+  const [inputValue, setInputValue] = useState(defaultValue);
 
   const handleChange = (evt) => {
-    const { value, search } = evt.target;
-    setValue({ [search]: value });
+    setInputValue(evt.target.value);
   };
 
-  return { value, handleChange, setValue };
+  return { inputValue, setInputValue, handleChange };
 }
 
 export default useSearch;

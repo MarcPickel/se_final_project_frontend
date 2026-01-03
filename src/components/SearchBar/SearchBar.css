@@ -1,5 +1,5 @@
 @font-face {
-  src: url("../../vendor/fonts/Roboto/Roboto-VariableFont_wdth\,wght.ttf");
+  src: url("../../vendor/fonts/Roboto/Roboto-VariableFont_wdth,wght.ttf");
   font-family: "Roboto";
 }
 
@@ -22,6 +22,11 @@
   position: relative;
   background-color: #fff;
   border-radius: 50px;
+  overflow: hidden;
+}
+
+.searchbar__container_active {
+  border: 2px solid #eb7200;
 }
 
 .searchbar__input {

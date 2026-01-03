@@ -1,5 +1,7 @@
 const defaultSubject = "classics";
 
+const defaultParam = "q";
+
 export const bookOptions = [
   {
     cover: "https://covers.openlibrary.org/b/id/14627564-M.jpg",
@@ -15,4 +17,4 @@ export const bookOptions = [
   { cover: "", title: "", author: "" },
 ];
 
-export { defaultSubject };
+export { defaultSubject, defaultParam };

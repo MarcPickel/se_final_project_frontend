@@ -9,7 +9,9 @@ import Main from "../Main/Main.jsx";
 import Library from "../Library/Library.jsx";
 import Footer from "../Footer/Footer.jsx";
 
-import { defaultSubject } from "../../utils/constants.js";
+import useSearch from "../../hooks/useSearch.js";
+
+import { defaultSubject, defaultParam } from "../../utils/constants.js";
 import {
   getSearch,
   filterSearchData,
@@ -21,11 +23,15 @@ import {
 } from "../../utils/openLibraryApi.js";
 
 function App() {
-  const [activeSearch, setActiveSearch] = useState("");
-  const [activeButton, setActiveButton] = useState("");
+  const [isActive, setIsActive] = useState(false);
   const [activeModal, setActiveModal] = useState("");
   const [bookItems, setBookItems] = useState([]);
   const [selectedCard, setSelectedCard] = useState({});
+
+  // State Variables for Library
+  const defaultValue = "";
+  const { inputValue, handleChange } = useSearch(defaultValue);
+
   {
     /*
   const [userData, setUserData] = useState(null);
@@ -124,14 +130,23 @@ function App() {
   }, []);*/
   }
 
+  const handleSearch = (value) => {
+    getSearch(defaultParam, value).then((data) => {
+      let filteredData = filterSearchData(data);
+      setBookItems(filteredData);
+    });
+  };
+
   useEffect(() => {
-    getSubject(defaultSubject)
-      .then((data) => {
-        let filteredData = filterSubjectData(data);
-        setBookItems(filteredData);
-      })
-      .catch(console.error);
-  }, []);
+    if (inputValue === "") {
+      getSubject(defaultSubject)
+        .then((data) => {
+          let filteredData = filterSubjectData(data);
+          setBookItems(filteredData);
+        })
+        .catch(console.error);
+    }
+  }, [inputValue]);
 
   return (
     <div className="page">
@@ -142,7 +157,16 @@ function App() {
           <Route path="/" element={<Main />}></Route>
           <Route
             path="/library"
-            element={<Library bookItems={bookItems} />}
+            element={
+              <Library
+                bookItems={bookItems}
+                handleSearch={handleSearch}
+                inputValue={inputValue}
+                handleChange={handleChange}
+                isActive={isActive}
+                setIsActive={setIsActive}
+              />
+            }
           ></Route>
         </Routes>
         <Footer />

@@ -7,19 +7,22 @@ import { checkResponse } from "./api.js";
 // param = q, title, or author
 
 export const getSearch = (param, value) => {
-  return fetch(`https://openlibrary.org/search.json?${param}=${value}`).then(
-    checkResponse
-  );
+  return fetch(
+    `https://openlibrary.org/search.json?${param}=${value}&limit=50`
+  ).then(checkResponse);
 };
 
 // Filter Book Data from General Search API
 
 export const filterSearchData = (data) => {
-  const result = {};
-  result.title = data.title;
-  result.author = data.author_name;
-  result.cover = data.cover_edition_key;
-  result.work = data.key;
+  return data.docs.map((docs) => ({
+    title: docs.title,
+    author: docs.author_name || "Unknown Author",
+    cover: docs.cover_edition_key
+      ? `https://covers.openlibrary.org/b/olid/${docs.cover_edition_key}.jpg`
+      : `https://covers.openlibrary.org/b/id/${docs.cover_i}-M.jpg`,
+    key: docs.key,
+  }));
 };
 
 // Search Covers - Search API
