@@ -3,6 +3,8 @@ import "./Library.css";
 import SearchBar from "../SearchBar/SearchBar.jsx";
 import BooksSection from "../BooksSection/BooksSection.jsx";
 
+import { useEffect } from "react";
+
 {
   /*import { NavLink } from "react-router-dom";
 import { useContext } from "react";
@@ -19,6 +21,11 @@ function Library({
   isActive,
   setIsActive,
 }) {
+  // Auto Scroll to Top on Page Entry
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="library">
       <section>

@@ -12,13 +12,16 @@ function Main() {
     <div className="main">
       <Banner />
       <Introduction />
-      <PageRoute text={"Start searching for good books"} />
+      <PageRoute text={"Start searching for good books"} route={"/library"} />
       <CristoCentric />
-      <PageRoute text={"Learn how to read good books like a warrior poet"} />
+      <PageRoute
+        text={"Learn how to read good books like a warrior poet"}
+        route={"/warriorpoet"}
+      />
       <Fraternity />
-      <PageRoute text={"Check out this year's line-up"} />
+      <PageRoute text={"Check out this year's line-up"} route={"/thisyears"} />
       <WisdomVirtue />
-      <PageRoute text={"Want to learn more?"} />
+      <PageRoute text={"Want to learn more?"} route={"/about"} />
       <TakeAndRead />
     </div>
   );

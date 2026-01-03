@@ -24,10 +24,9 @@ import {
 
 function App() {
   const [isActive, setIsActive] = useState(false);
-  const [activeTab, setActiveTab] = useState(false);
   const [activeModal, setActiveModal] = useState("");
-  const [bookItems, setBookItems] = useState([]);
   const [selectedCard, setSelectedCard] = useState({});
+  const [bookItems, setBookItems] = useState([]);
 
   // State Variables for Library
   const defaultValue = "";
@@ -173,6 +172,12 @@ function App() {
           ></Route>
         </Routes>
         <Footer />
+        {/*
+        <RegisterModal />
+        <SignInModal />
+        <EditProfileModal />
+        <ItemModal />
+        */}
       </div>
     </div>
   );
