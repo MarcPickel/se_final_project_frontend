@@ -70,3 +70,59 @@
   align-items: center;
   gap: 20px;
 }
+
+/* Tablet styles */
+@media screen and (max-width: 1024px) {
+  .header__title {
+    font-size: 28px;
+  }
+
+  .header__username {
+    font-size: 18px;
+  }
+}
+
+/* Smartphone styles */
+@media screen and (max-width: 767px) {
+  .header {
+    padding: 0 10px 10px;
+    flex-wrap: wrap;
+  }
+
+  .header__logo {
+    width: 40px;
+  }
+
+  .header__title {
+    margin: 0 0 0 12px;
+    font-size: 20px;
+  }
+
+  .header__sign-container {
+    gap: 10px;
+    margin-top: 10px;
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  .header__sign-button {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+
+  .header__user-content {
+    margin-top: 10px;
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  .header__username {
+    font-size: 16px;
+    margin: 0 0 0 12px;
+  }
+
+  .header__profile-image {
+    width: 35px;
+    margin: 0 0 0 8px;
+  }
+}

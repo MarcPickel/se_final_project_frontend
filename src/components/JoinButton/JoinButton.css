@@ -17,3 +17,9 @@
   box-shadow: 0 0 10px 5px #eb7200;
   cursor: pointer;
 }
+
+@media screen and (max-width: 700px) {
+  .join__button {
+    width: 200px;
+  }
+}

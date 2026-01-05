@@ -9,20 +9,27 @@ function ItemCard({ item, onCardClick, onCardSave }) {
   const isSaved = "";
   const itemSaveButtonClassName = "card__save-button_active";
 
-  const handleSave = (evt) => {
+  /*const handleSave = (evt) => {
     evt.preventDefault();
     onCardSave(item);
-  };
+  };*/
 
-  const handleCardImageClick = () => {
-    onCardClick(item);
+  const handleCardClick = () => {
+    if (onCardClick) {
+      onCardClick(item);
+    }
   };
 
   return (
     <li className="card">
       <div>
         <div className="card__image-container">
-          <img className="card__image" src={item.cover} alt={item.title} />
+          <img
+            className="card__image"
+            src={item.cover}
+            alt={item.title}
+            onClick={handleCardClick}
+          />
           {/*currentUser.isLoggedIn && (
           <button
             className={`card__save-button ${

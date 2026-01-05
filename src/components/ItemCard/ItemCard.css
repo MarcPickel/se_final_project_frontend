@@ -25,6 +25,7 @@
   width: 150px;
   box-shadow: 0 0 10px #000;
   transition: transform 0.3s ease-in-out;
+  cursor: pointer;
 }
 
 .card:hover .card__image {
@@ -37,4 +38,43 @@
 
 .card__text {
   margin: 0;
+}
+
+/* Tablet styles */
+@media screen and (max-width: 1024px) {
+  .card {
+    width: 180px;
+  }
+
+  .card__image-container {
+    height: 270px;
+  }
+
+  .card__image {
+    width: 130px;
+  }
+}
+
+/* Smartphone styles */
+@media screen and (max-width: 767px) {
+  .card {
+    width: 100%;
+    max-width: 150px;
+  }
+
+  .card__image-container {
+    height: 220px;
+  }
+
+  .card__image {
+    width: 110px;
+  }
+
+  .card__title {
+    font-size: 14px;
+  }
+
+  .card__text {
+    font-size: 12px;
+  }
 }

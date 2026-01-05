@@ -38,3 +38,13 @@
   font-size: 20px;
   text-align: center;
 }
+
+@media screen and (max-width: 700px) {
+  .christo-centric-content {
+    padding: 0 20px;
+  }
+
+  .christo-centric__subtitle {
+    text-align: center;
+  }
+}

@@ -32,3 +32,24 @@
   box-shadow: 0 0 10px 5px #eb7200;
   cursor: pointer;
 }
+
+@media screen and (max-width: 1300px) {
+  .banner__act-button {
+    bottom: 50%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .banner__act-button {
+    bottom: 60%;
+    right: 30%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .banner__act-button {
+    width: 200px;
+    bottom: 65%;
+    right: 30%;
+  }
+}

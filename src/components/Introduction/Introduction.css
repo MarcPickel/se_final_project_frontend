@@ -51,3 +51,26 @@
   margin: 0;
   color: #eb7200;
 }
+
+@media screen and (max-width: 1024px) {
+  .intro-content {
+    flex-direction: column;
+    max-width: 600px;
+    padding: 0 20px;
+  }
+
+  .intro__image {
+    margin: 0 0 14px;
+  }
+
+  .intro__title {
+    margin: 0 0 14px;
+    padding: 0 0 14px;
+    border-right: none;
+    border-bottom: solid 2px #ffffffbf;
+  }
+
+  .intro__column {
+    align-items: center;
+  }
+}

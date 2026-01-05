@@ -42,3 +42,17 @@
 .wisdom-virtue__image {
   width: 300px;
 }
+
+@media screen and (max-width: 1024px) {
+  .wisdom-virtue__row {
+    padding: 0 20px;
+    max-width: 600px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .wisdom-virtue__text {
+    margin: 0 0 14px;
+    text-align: center;
+  }
+}

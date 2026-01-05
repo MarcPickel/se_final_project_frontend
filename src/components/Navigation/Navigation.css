@@ -45,3 +45,37 @@
 .nav__button_active {
   background-color: #246;
 }
+
+/* Tablet styles */
+@media screen and (max-width: 1024px) {
+  .nav {
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .nav__button {
+    font-size: 18px;
+    padding: 8px 12px;
+  }
+}
+
+/* Smartphone styles */
+@media screen and (max-width: 767px) {
+  .nav {
+    margin: 0 10px 10px;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .nav__button {
+    font-size: 14px;
+    padding: 8px 10px;
+    width: auto;
+    min-width: 120px;
+  }
+
+  .nav__button-icon {
+    width: 16px;
+    height: 16px;
+  }
+}

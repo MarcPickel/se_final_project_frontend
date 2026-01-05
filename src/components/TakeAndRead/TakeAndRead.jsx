@@ -12,7 +12,7 @@ function TakeAndRead({ onSignUpClick }) {
           src={augustine}
           alt="St. Augustin of Hippo"
         />
-        <div>
+        <div className="take-and-read__column">
           <h2 className="take-and-read__subtitle">Tolle lege!</h2>
           <p className="take-and-read__text">
             Take up and read the good books of the Western Canon that have been

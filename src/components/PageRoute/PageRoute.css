@@ -28,3 +28,9 @@
 .page-route__text:hover + .page-route__arrows {
   transform: translateX(5px);
 }
+
+@media screen and (max-width: 1024px) {
+  .page-route {
+    padding: 20px;
+  }
+}

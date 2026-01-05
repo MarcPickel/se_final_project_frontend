@@ -34,3 +34,24 @@
 .books-section__show-more:hover {
   opacity: 0.6;
 }
+
+@media screen and (max-width: 1024px) {
+  .books-section__items {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
+    gap: 15px;
+    padding: 15px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .books-section__items {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 150px), 1fr));
+    gap: 12px;
+    padding: 12px;
+  }
+
+  .books-section__show-more {
+    padding: 8px 24px;
+    font-size: 14px;
+  }
+}

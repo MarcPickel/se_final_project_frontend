@@ -71,7 +71,26 @@ export const getAuthor = (value) => {
 // Search by Work - Works API
 
 export const getWork = (key) => {
-  return fetch(`https://openlibrary.org/works/${key}.json`).then(checkResponse);
+  const workId = key.startsWith("/works/") ? key.replace("/works/", "") : key;
+  return fetch(`https://openlibrary.org/works/${workId}.json`).then(
+    checkResponse
+  );
+};
+
+export const filterWork = (data) => {
+  let description = "";
+
+  if (data.description) {
+    if (typeof data.description === "string") {
+      description = data.description;
+    } else if (data.description.value) {
+      description = data.description.value;
+    }
+  }
+
+  return {
+    description: description || "No description available.",
+  };
 };
 
 // key example: "key":"/works/OL27448W" - OL number is key

@@ -35,3 +35,28 @@
   flex-wrap: wrap;
   font-size: 20px;
 }
+
+@media screen and (max-width: 1024px) {
+  .take-and-read-content {
+    flex-direction: column;
+    padding: 0 20px;
+  }
+
+  .take-and-read__image {
+    margin: 0 0 14px;
+  }
+
+  .take-and-read__subtitle {
+    text-align: center;
+  }
+
+  .take-and-read__text {
+    text-align: center;
+  }
+
+  .take-and-read__column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}

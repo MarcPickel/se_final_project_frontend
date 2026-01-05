@@ -22,6 +22,7 @@ import {
   getSubject,
   filterSubjectData,
   getWork,
+  filterWork,
 } from "../../utils/openLibraryApi.js";
 import { editProfile } from "../../utils/api.js";
 import * as auth from "../../utils/auth.js";
@@ -62,6 +63,19 @@ function App() {
   const handleCardClick = (card) => {
     setActiveModal("preview");
     setSelectedCard(card);
+    if (card.key) {
+      getWork(card.key)
+        .then((workData) => {
+          const filteredData = filterWork(workData);
+          setSelectedCard({
+            ...card,
+            description: filteredData.description,
+          });
+        })
+        .catch((error) => {
+          console.error("Failed to fetch work details:", error);
+        });
+    }
   };
 
   // Auth Handlers
@@ -182,6 +196,7 @@ function App() {
                   handleChange={handleChange}
                   isActive={isActive}
                   setIsActive={setIsActive}
+                  onCardClick={handleCardClick}
                 />
               }
             ></Route>
@@ -203,7 +218,11 @@ function App() {
             onClose={onClose}
             handleEditProfile={handleEditProfile}
           />
-          <ItemModal isOpen={activeModal === "preview"} card={selectedCard} />
+          <ItemModal
+            isOpen={activeModal === "preview"}
+            card={selectedCard}
+            onClose={onClose}
+          />
         </div>
       </div>
     </CurrentUserContext.Provider>

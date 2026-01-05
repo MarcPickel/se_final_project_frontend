@@ -12,3 +12,17 @@
   margin: 0 auto;
   box-sizing: border-box;
 }
+
+/* Tablet styles */
+@media screen and (max-width: 1024px) {
+  .page__content {
+    padding: 15px 0;
+  }
+}
+
+/* Smartphone styles */
+@media screen and (max-width: 767px) {
+  .page__content {
+    padding: 10px 0;
+  }
+}

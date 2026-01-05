@@ -125,3 +125,13 @@
   font-family: "Roboto", Arial, sans-serif;
   font-size: 20px;
 }
+
+@media screen and (max-width: 700px) {
+  .fraternity-content {
+    padding: 0 20px;
+  }
+
+  .fraternity__row {
+    gap: 20px;
+  }
+}
