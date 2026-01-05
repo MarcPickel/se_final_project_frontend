@@ -8,7 +8,7 @@ function checkResponse(res) {
 }
 
 // For the My Books page
-/*function getItems() {
+function getItems() {
   return new Promise((resolve, reject) =>
     resolve([
       {
@@ -32,7 +32,7 @@ function saveBook(book) {
       imageUrl: book.imagUrl,
     });
   });
-}*/
+}
 
 function editProfile({ name, image }) {
   return new Promise((resolve, reject) => {
