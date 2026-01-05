@@ -39,6 +39,7 @@
   color: #000;
   opacity: 0.6;
   border: none;
+  cursor: pointer;
 }
 
 .modal__close:hover {

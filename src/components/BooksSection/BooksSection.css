@@ -3,6 +3,10 @@
   height: 100%;
 }
 
+.books-section__content {
+  padding: 0 0 20px;
+}
+
 .books-section__items {
   margin: 0;
   padding: 20px;
@@ -11,4 +15,22 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
   gap: 20px;
+}
+
+.books-section__show-more {
+  display: block;
+  margin: 0 auto;
+  padding: 10px 30px;
+  background-color: #246;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  font-size: 16px;
+  font-family: "Roboto", Arial, sans-serif;
+  cursor: pointer;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.books-section__show-more:hover {
+  opacity: 0.6;
 }
