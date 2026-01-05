@@ -7,22 +7,22 @@ import WisdomVirtue from "../WisdomVirtue/WisdomVirtue.jsx";
 import TakeAndRead from "../TakeAndRead/TakeAndRead.jsx";
 import PageRoute from "../PageRoute/PageRoute.jsx";
 
-function Main() {
+function Main({ onSignUpClick }) {
   return (
     <div className="main">
-      <Banner />
-      <Introduction />
+      <Banner onSignUpClick={onSignUpClick} />
+      <Introduction onSignUpClick={onSignUpClick} />
       <PageRoute text={"Start searching for good books"} route={"/library"} />
       <CristoCentric />
       <PageRoute
         text={"Learn how to read good books like a warrior poet"}
         route={"/warriorpoet"}
       />
-      <Fraternity />
+      <Fraternity onSignUpClick={onSignUpClick} />
       <PageRoute text={"Check out this year's line-up"} route={"/thisyears"} />
       <WisdomVirtue />
       <PageRoute text={"Want to learn more?"} route={"/about"} />
-      <TakeAndRead />
+      <TakeAndRead onSignUpClick={onSignUpClick} />
     </div>
   );
 }

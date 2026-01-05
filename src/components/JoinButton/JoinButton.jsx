@@ -1,9 +1,9 @@
 import "./JoinButton.css";
 
-function JoinButton() {
+function JoinButton({ onSignUpClick }) {
   return (
     <>
-      <button className="join__button" type="button">
+      <button className="join__button" type="button" onClick={onSignUpClick}>
         JOIN TODAY
       </button>
     </>

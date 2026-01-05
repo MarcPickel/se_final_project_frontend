@@ -44,7 +44,12 @@ function SearchBar({
               onFocus={handleFocus}
               onBlur={handleBlur}
             ></input>
-            <img className="searchbar__button-icon" src={glass} alt="search" />
+            <img
+              className="searchbar__button-icon"
+              src={glass}
+              alt="search"
+              onClick={() => handleSearch(inputValue)}
+            />
           </div>
         </form>
       </search>

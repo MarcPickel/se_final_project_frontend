@@ -1,13 +1,16 @@
 import useForm from "../../hooks/useForm.js";
+import ModalWithForm from "../ModalWithForm/ModalWithForm.jsx";
 
-function SignUpModal() {
+import lincoln from "../../assets/boy-lincoln-reading-eastman-johnson.jpeg";
+
+function SignUpModal({ isOpen, onClose, handleSignUp }) {
   const defaultValues = { email: "", password: "", name: "", image: "" };
   const { values, handleChange, handleReset } = useForm(defaultValues);
 
   function handleSubmit(evt) {
     evt.preventDefault();
 
-    handleSignup(values)
+    handleSignUp(values)
       .then(() => {
         onClose();
         handleReset(evt);
@@ -17,13 +20,14 @@ function SignUpModal() {
 
   return (
     <ModalWithForm
+      image={lincoln}
+      alt="Boy Lincoln Reading, Eastman Johnson"
       name="signup"
       title="Sign Up"
-      buttonText={buttonText}
-      onClose={onClose}
-      onSignInClick={onSignInClick}
+      buttonText="Sign Up"
       onSubmit={handleSubmit}
       isOpen={isOpen}
+      onClose={onClose}
     >
       <label htmlFor="email-signup" className="modal__label">
         Email*

@@ -33,7 +33,7 @@
   align-items: center;
 }
 
-.header__signout-button {
+.header__sign-button {
   padding: 10px 16px;
   background: none;
   color: #fff;
@@ -43,9 +43,13 @@
   transition: background-color 0.3s ease-in-out;
 }
 
-.header__signout-button:hover {
+.header__sign-button:hover {
   background-color: #246;
   cursor: pointer;
+}
+
+.header__sign-button:focus {
+  outline: none;
 }
 
 .header__username {
@@ -54,7 +58,15 @@
   color: #fff;
 }
 
-.header__avatar {
+.header__profile-image {
   margin: 0 0 0 12px;
   width: 45px;
+  cursor: pointer;
+}
+
+.header__sign-container {
+  margin: 0 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }

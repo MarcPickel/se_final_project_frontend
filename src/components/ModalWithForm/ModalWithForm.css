@@ -1,0 +1,65 @@
+@font-face {
+  src: url("../../vendor/fonts/Roboto/Roboto-VariableFont_wdth,wght.ttf");
+  font-family: "Roboto";
+}
+
+.modal__image {
+  width: 300px;
+}
+
+.modal__form-content {
+  padding: 20px;
+  font-family: "Roboto", Arial, sans-serif;
+  color: #fff;
+}
+
+.modal__title {
+  margin: 0 0 15px;
+}
+
+.modal__form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.modal__label {
+  margin-bottom: 24px;
+  font-weight: bold;
+}
+
+.modal__label-error {
+  color: #ff4d00;
+  border-bottom-color: #ff4d00;
+}
+
+.modal__input {
+  display: block;
+  padding: 0;
+  margin: 8px 0 0 0;
+  width: 100%;
+  font-weight: bold;
+  border: none;
+  background-color: #fff;
+}
+
+.modal__input-error {
+  color: #ff4d00;
+  border-color: #ff4d00;
+}
+
+.modal__submit-button {
+  padding: 8px 16px;
+  height: 36px;
+  font-weight: bold;
+  background-color: #eb7200;
+  color: #000;
+  border-radius: 4px;
+  border: none;
+}
+
+.modal__submit-button:hover {
+  background-image: linear-gradient(to right, #eb7200, #ff383c);
+  box-shadow: 0 0 10px 5px #eb7200;
+  cursor: pointer;
+}

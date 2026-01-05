@@ -4,10 +4,14 @@ import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import Header from "../Header/Header.jsx";
 import Navigation from "../Navigation/Navigation.jsx";
-
 import Main from "../Main/Main.jsx";
 import Library from "../Library/Library.jsx";
 import Footer from "../Footer/Footer.jsx";
+
+import SignUpModal from "../SignUpModal/SignUpModal.jsx";
+import SignInModal from "../SignInModal/SignInModal.jsx";
+import EditProfileModal from "../EditProfileModal/EditProfileModal.jsx";
+import ItemModal from "../ItemModal/ItemModal.jsx";
 
 import useSearch from "../../hooks/useSearch.js";
 
@@ -15,12 +19,16 @@ import { defaultSubject, defaultParam } from "../../utils/constants.js";
 import {
   getSearch,
   filterSearchData,
-  getBookCover,
   getSubject,
   filterSubjectData,
-  getAuthor,
   getWork,
 } from "../../utils/openLibraryApi.js";
+import { editProfile } from "../../utils/api.js";
+import * as auth from "../../utils/auth.js";
+
+import CurrentUserContext from "../../contexts/CurrentUserContext.jsx";
+
+import { setToken, getToken, removeToken } from "../../utils/token.js";
 
 function App() {
   const [isActive, setIsActive] = useState(false);
@@ -28,41 +36,42 @@ function App() {
   const [selectedCard, setSelectedCard] = useState({});
   const [bookItems, setBookItems] = useState([]);
 
+  const [userData, setUserData] = useState(null);
+  const [isSignedIn, setIsSignedIn] = useState(false);
+
   // State Variables for Library
   const defaultValue = "";
   const { inputValue, handleChange } = useSearch(defaultValue);
 
-  {
-    /*
-  const [userData, setUserData] = useState(null);
-  const [isSignedIn, setIsSignedIn] = useState(false);
+  const onClose = () => {
+    setActiveModal("");
+  };
 
-  const onSignupClick = () => {
+  const onSignUpClick = () => {
     setActiveModal("signup");
   };
 
-  const onSigninClick = () => {
+  const onSignInClick = () => {
     setActiveModal("signin");
   };
 
-  const onRegisterClick = () => {
-    onClose();
-    setActiveModal("signup");
+  const onEditProfileClick = () => {
+    setActiveModal("edit-profile");
   };
 
-  const onSwitchToSignInClick = () => {
-    onClose();
-    setActiveModal("signin");
+  const handleCardClick = (card) => {
+    setActiveModal("preview");
+    setSelectedCard(card);
   };
 
   // Auth Handlers
-  const handleSignup = ({ email, password, name, avatar }) => {
+  const handleSignUp = ({ email, password, name, avatar }) => {
     return auth.register(email, password, name, avatar).then(() => {
-      return handleSignin({ email, password });
+      return handleSignIn({ email, password });
     });
   };
 
-  const handleSignin = ({ email, password }) => {
+  const handleSignIn = ({ email, password }) => {
     if (!email || !password) {
       return Promise.reject("Email and password are required");
     }
@@ -71,7 +80,7 @@ function App() {
       if (data.token) {
         setToken(data.token);
         setUserData(data.user);
-        setIsLoggedIn(true);
+        setIsSignedIn(true);
         onClose();
       }
     });
@@ -86,34 +95,30 @@ function App() {
     }
 
     auth
-      .getUserInfo(token)
+      .checkToken(token)
       .then((user) => {
-        setIsLoggedIn(true);
+        setIsSignedIn(true);
         setUserData(user);
       })
       .catch((err) => {
         console.error("Auth check failed:", err);
         removeToken();
-        setIsLoggedIn(false);
+        setIsSignedIn(false);
         setUserData(null);
       });
   }, []);
 
   // Edit Profile Handlers
-  const handleEditProfileClick = () => {
-    setActiveModal("edit-profile");
-  };
 
-  const onEditProfile = (inputValues) => {
+  const handleEditProfile = (inputValues) => {
     const newUserData = {
       ...userData,
       name: inputValues.name,
-      avatar: inputValues.avatar,
+      image: inputValues.image,
     };
     setUserData(newUserData);
     onClose();
-  };*/
-  }
+  };
 
   {
     // This would be a good useEffect for the MyBooks Page,
@@ -151,35 +156,57 @@ function App() {
   }, [inputValue]);
 
   return (
-    <div className="page">
-      <div className="page__content">
-        <Header />
-        <Navigation />
-        <Routes>
-          <Route path="/" element={<Main />}></Route>
-          <Route
-            path="/library"
-            element={
-              <Library
-                bookItems={bookItems}
-                handleSearch={handleSearch}
-                inputValue={inputValue}
-                handleChange={handleChange}
-                isActive={isActive}
-                setIsActive={setIsActive}
-              />
-            }
-          ></Route>
-        </Routes>
-        <Footer />
-        {/*
-        <RegisterModal />
-        <SignInModal />
-        <EditProfileModal />
-        <ItemModal />
-        */}
+    <CurrentUserContext.Provider
+      value={{ userData, isSignedIn, setIsSignedIn }}
+    >
+      <div className="page">
+        <div className="page__content">
+          <Header
+            onSignUpClick={onSignUpClick}
+            onSignInClick={onSignInClick}
+            onEditProfileClick={onEditProfileClick}
+          />
+          <Navigation />
+          <Routes>
+            <Route
+              path="/"
+              element={<Main onSignUpClick={onSignUpClick} />}
+            ></Route>
+            <Route
+              path="/library"
+              element={
+                <Library
+                  bookItems={bookItems}
+                  handleSearch={handleSearch}
+                  inputValue={inputValue}
+                  handleChange={handleChange}
+                  isActive={isActive}
+                  setIsActive={setIsActive}
+                />
+              }
+            ></Route>
+          </Routes>
+          <Footer />
+
+          <SignUpModal
+            isOpen={activeModal === "signup"}
+            onClose={onClose}
+            handleSignUp={handleSignUp}
+          />
+          <SignInModal
+            isOpen={activeModal === "signin"}
+            onClose={onClose}
+            handleSignIn={handleSignIn}
+          />
+          <EditProfileModal
+            isOpen={activeModal === "edit-profile"}
+            onClose={onClose}
+            handleEditProfile={handleEditProfile}
+          />
+          <ItemModal isOpen={activeModal === "preview"} card={selectedCard} />
+        </div>
       </div>
-    </div>
+    </CurrentUserContext.Provider>
   );
 }
 

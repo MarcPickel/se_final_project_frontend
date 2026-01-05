@@ -3,7 +3,7 @@ import "./TakeAndRead.css";
 import JoinButton from "../JoinButton/JoinButton.jsx";
 import augustine from "../../assets/saint_augustine_by_philippe_de_champaigne.jpg";
 
-function TakeAndRead() {
+function TakeAndRead({ onSignUpClick }) {
   return (
     <section className="take-and-read">
       <div className="take-and-read-content">
@@ -19,7 +19,7 @@ function TakeAndRead() {
             passed down as part of our Western and Christian heritage for
             centuries.
           </p>
-          <JoinButton />
+          <JoinButton onSignUpClick={onSignUpClick} />
         </div>
       </div>
     </section>

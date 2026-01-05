@@ -24,11 +24,7 @@ function Footer() {
             <p className="footer__email">marcpc@att.net</p>
             <p className="footer__phone">(906) 322-8501</p>
             <div className="footer__social-links">
-              <img
-                className="footer__linkedin-icon"
-                src={linkedin}
-                alt="LinkedIn"
-              />
+              <img src={linkedin} alt="LinkedIn" />
               <a
                 href="https://www.linkedin.com/in/marc-pickelman"
                 target="_blank"

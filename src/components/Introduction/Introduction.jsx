@@ -4,7 +4,7 @@ import JoinButton from "../JoinButton/JoinButton.jsx";
 
 import ship from "../../assets/old-style-ship-kenilworth-honorable-james-richmond.jpg";
 
-function Introduction() {
+function Introduction({ onSignUpClick }) {
   return (
     <section className="intro">
       <div className="intro-content">
@@ -25,7 +25,7 @@ function Introduction() {
             eternal truths rediscovered through the traditional pastime of
             reading good books.
           </p>
-          <JoinButton />
+          <JoinButton onSignUpClick={onSignUpClick} />
         </div>
       </div>
     </section>

@@ -5,7 +5,7 @@ import flower from "../../assets/flower-icon.svg";
 import heart from "../../assets/heart-icon.svg";
 import JoinButton from "../JoinButton/JoinButton.jsx";
 
-function Fraternity() {
+function Fraternity({ onSignUpClick }) {
   return (
     <section className="fraternity">
       <div className="fraternity-content">
@@ -42,7 +42,7 @@ function Fraternity() {
             <p className="fraternity__icon-text">Beauty</p>
           </div>
         </div>
-        <JoinButton />
+        <JoinButton onSignUpClick={onSignUpClick} />
       </div>
     </section>
   );

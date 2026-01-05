@@ -1,14 +1,22 @@
 import "./Header.css";
 
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useContext } from "react";
+import { removeToken } from "../../utils/token";
 import CurrentUserContext from "../../contexts/CurrentUserContext.jsx";
 
 import logo from "../../assets/msfr__logo_small.svg";
-import defaultAvatar from "../../assets/default-avatar.svg";
+import defaultImage from "../../assets/default-avatar.svg";
 
-function Header() {
-  //const { userData, isSignedIn } = useContext(CurrentUserContext);
+function Header({ onSignUpClick, onSignInClick, onEditProfileClick }) {
+  const { userData, isSignedIn, setIsSignedIn } = useContext(CurrentUserContext);
+  const navigate = useNavigate();
+
+  function signOut() {
+    removeToken();
+    navigate("/");
+    setIsSignedIn(false);
+  }
 
   return (
     <header className="header">
@@ -16,20 +24,45 @@ function Header() {
         <img className="header__logo" src={logo} alt="MSFR" />
       </NavLink>
       <p className="header__title">Man's Search For Reading</p>
-
-      <>
-        <div className="header__user-content">
-          <button className="header__signout-button" type="button">
-            Sign Out
-          </button>
-          <p className="header__username">Marc Pickelman</p>
-          <img
-            className="header__avatar"
-            src={defaultAvatar}
-            alt="Marc Pickelman"
-          />
-        </div>
-      </>
+      {isSignedIn ? (
+        <>
+          <div className="header__user-content">
+            <button
+              className="header__sign-button"
+              type="button"
+              onClick={signOut}
+            >
+              Sign Out
+            </button>
+            <p className="header__username">Marc Pickelman</p>
+            <img
+              className="header__profile-image"
+              src={defaultImage}
+              alt="Marc Pickelman"
+              onClick={onEditProfileClick}
+            />
+          </div>
+        </>
+      ) : (
+        <>
+          <div className="header__sign-container">
+            <button
+              onClick={onSignUpClick}
+              type="button"
+              className="header__sign-button"
+            >
+              Sign Up
+            </button>
+            <button
+              onClick={onSignInClick}
+              type="button"
+              className="header__sign-button"
+            >
+              Sign In
+            </button>
+          </div>
+        </>
+      )}
     </header>
   );
 }

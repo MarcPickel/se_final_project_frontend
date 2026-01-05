@@ -1,0 +1,46 @@
+.modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #0000004d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+}
+
+.modal_opened {
+  visibility: visible;
+}
+
+.modal__container {
+  position: relative;
+  padding: 0;
+  max-width: 580px;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #222;
+  border-radius: 20px;
+  display: flex;
+  overflow: hidden;
+}
+
+.modal__close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  margin: 0;
+  padding: 0;
+  width: 20px;
+  height: 20px;
+  background: transparent url(../../assets/cross-icon.svg) center no-repeat;
+  color: #000;
+  opacity: 0.6;
+  border: none;
+}
+
+.modal__close:hover {
+  opacity: 1;
+}

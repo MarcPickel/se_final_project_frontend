@@ -1,10 +1,8 @@
 import "./Banner.css";
 
-import JoinButton from "../JoinButton/JoinButton.jsx";
-
 import odyssey from "../../assets/ulysses-and-the-sirens-waterhouse.jpg";
 
-function Banner() {
+function Banner({ onSignUpClick }) {
   return (
     <>
       <img
@@ -12,7 +10,11 @@ function Banner() {
         src={odyssey}
         alt="Ulysses and the Sirens, John William Waterhouse, Pre-Raphaelite Brotherhood"
       />
-      <button className="banner__act-button" type="button">
+      <button
+        className="banner__act-button"
+        type="button"
+        onClick={onSignUpClick}
+      >
         JOIN TODAY
       </button>
     </>
