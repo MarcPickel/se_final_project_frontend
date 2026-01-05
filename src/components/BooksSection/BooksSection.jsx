@@ -6,7 +6,7 @@ import Preloader from "../Preloader/Preloader.jsx";
 import { useState, useEffect } from "react";
 import CurrentUserContext from "../../contexts/CurrentUserContext.jsx";
 
-function BooksSection({ bookItems, onCardClick, onCardSave }) {
+function BooksSection({ bookItems, onCardClick, onCardSave, searchError }) {
   const [isLoading, setIsLoading] = useState(true);
   const [data, setData] = useState(null);
   const [booksToShow, setBooksToShow] = useState(3);
@@ -17,7 +17,7 @@ function BooksSection({ bookItems, onCardClick, onCardSave }) {
       setTimeout(() => {
         setData(bookItems);
         setIsLoading(false);
-        setBooksToShow(3); // Reset to 3 when new data loads
+        setBooksToShow(3);
       }, 3000);
     } else if (bookItems && bookItems.length === 0) {
       setIsLoading(false);
@@ -32,12 +32,17 @@ function BooksSection({ bookItems, onCardClick, onCardSave }) {
 
   const displayedBooks = Array.isArray(data) ? data.slice(0, booksToShow) : [];
   const hasMoreBooks = Array.isArray(data) && data.length > booksToShow;
+  const hasNoBooks = !isLoading && Array.isArray(data) && data.length === 0;
 
   return (
     <div className="books-section">
       <div className="books-section__content">
         {isLoading ? (
           <Preloader />
+        ) : searchError ? (
+          <p className="books-section__message">An error occurred</p>
+        ) : hasNoBooks ? (
+          <p className="books-section__message">Nothing found</p>
         ) : (
           <>
             <ul className="books-section__items">

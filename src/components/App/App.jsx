@@ -36,6 +36,7 @@ function App() {
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({});
   const [bookItems, setBookItems] = useState([]);
+  const [searchError, setSearchError] = useState(null);
 
   const [userData, setUserData] = useState(null);
   const [isSignedIn, setIsSignedIn] = useState(false);
@@ -152,20 +153,36 @@ function App() {
   // Search Functionability
 
   const handleSearch = (value) => {
-    getSearch(defaultParam, value).then((data) => {
-      let filteredData = filterSearchData(data);
-      setBookItems(filteredData);
-    });
+    setSearchError(null);
+    getSearch(defaultParam, value)
+      .then((data) => {
+        let filteredData = filterSearchData(data);
+        setBookItems(filteredData);
+      })
+      .catch((error) => {
+        const status = error.match(/\d+/)?.[0];
+        if (status === "500" || status === "503") {
+          setSearchError(true);
+          setBookItems([]);
+        }
+      });
   };
 
   useEffect(() => {
     if (inputValue === "") {
+      setSearchError(null);
       getSubject(defaultSubject)
         .then((data) => {
           let filteredData = filterSubjectData(data);
           setBookItems(filteredData);
         })
-        .catch(console.error);
+        .catch((error) => {
+          const status = error.match(/\d+/)?.[0];
+          if (status === "500" || status === "503") {
+            setSearchError(true);
+            setBookItems([]);
+          }
+        });
     }
   }, [inputValue]);
 
@@ -197,6 +214,7 @@ function App() {
                   isActive={isActive}
                   setIsActive={setIsActive}
                   onCardClick={handleCardClick}
+                  searchError={searchError}
                 />
               }
             ></Route>

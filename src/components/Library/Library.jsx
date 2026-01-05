@@ -20,6 +20,7 @@ function Library({
   handleChange,
   isActive,
   setIsActive,
+  searchError,
 }) {
   // Auto Scroll to Top on Page Entry
   useEffect(() => {
@@ -42,6 +43,7 @@ function Library({
           onCardClick={onCardClick}
           bookItems={bookItems}
           onCardSave={onCardSave}
+          searchError={searchError}
         />
       </section>
     </div>

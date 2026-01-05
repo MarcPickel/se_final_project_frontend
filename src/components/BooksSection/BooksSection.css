@@ -35,6 +35,16 @@
   opacity: 0.6;
 }
 
+.books-section__message {
+  text-align: center;
+  padding: 40px 20px;
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 18px;
+  color: #5b5959;
+  margin: 0;
+}
+
+
 @media screen and (max-width: 1024px) {
   .books-section__items {
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
