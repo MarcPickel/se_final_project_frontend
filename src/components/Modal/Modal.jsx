@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-function Modal({ name, onClose, children }) {
+function Modal({ name, image, alt, onClose, children }) {
   useEffect(() => {
     const handleEscape = (e) => {
       if (e.key === "Escape") {
@@ -20,10 +20,9 @@ function Modal({ name, onClose, children }) {
 
   return (
     <div className={`modal modal_type_${name}`} onClick={handleOverlay}>
-      <div className="modal__container">
-        {children}
-        <button className="modal__close" type="button" onClick={onClose} />
-      </div>
+      <img className="modal__image" src={image} alt={alt} />
+      <button className="modal__close" type="button" onClick={onClose} />
+      <div className="modal__container">{children}</div>
     </div>
   );
 }

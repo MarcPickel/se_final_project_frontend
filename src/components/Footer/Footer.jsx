@@ -4,6 +4,10 @@ import logo from "../../assets/msfr__logo_big.svg";
 import linkedin from "../../assets/linkedin-icon.svg";
 
 function Footer() {
+  function toTop() {
+    window.scrollTo(0, 0);
+  }
+
   return (
     <footer className="footer">
       <div className="footer-content">
@@ -12,6 +16,7 @@ function Footer() {
             className="footer__logo"
             src={logo}
             alt="Man's Search For Reading"
+            onClick={toTop}
           />
           <div className="footer__column">
             <p className="footer__title">Man's Search For Reading</p>

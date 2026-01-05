@@ -35,6 +35,10 @@
   width: 200px;
 }
 
+.footer__logo:hover {
+  cursor: pointer;
+}
+
 .footer__title {
   font-size: 24px;
   font-weight: 400;
