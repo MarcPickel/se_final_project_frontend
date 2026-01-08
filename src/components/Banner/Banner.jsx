@@ -4,9 +4,9 @@ import odyssey from "../../assets/ulysses-and-the-sirens-waterhouse.jpg";
 
 function Banner({ onSignUpClick }) {
   return (
-    <>
+    <div className="banner">
       <img
-        className="banner"
+        className="banner__image"
         src={odyssey}
         alt="Ulysses and the Sirens, John William Waterhouse, Pre-Raphaelite Brotherhood"
       />
@@ -17,7 +17,7 @@ function Banner({ onSignUpClick }) {
       >
         JOIN TODAY
       </button>
-    </>
+    </div>
   );
 }
 

@@ -44,7 +44,6 @@
   margin: 0;
 }
 
-
 @media screen and (max-width: 1024px) {
   .books-section__items {
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
@@ -54,10 +53,14 @@
 }
 
 @media screen and (max-width: 767px) {
+  .books-section__content {
+    padding: 0 0 10px;
+  }
+
   .books-section__items {
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 150px), 1fr));
     gap: 12px;
-    padding: 12px;
+    padding: 2px;
   }
 
   .books-section__show-more {

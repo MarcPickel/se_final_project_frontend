@@ -3,7 +3,6 @@ import "./ItemModal.css";
 import Modal from "../Modal/Modal.jsx";
 
 function ItemModal({ card, isOpen, onClose }) {
-  // Extract data from card object or use defaults
   const image = card?.cover || "";
   const alt = card?.title || "Book cover";
   const title = card?.title || "";

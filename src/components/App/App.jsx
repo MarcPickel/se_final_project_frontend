@@ -235,6 +235,7 @@ function App() {
             isOpen={activeModal === "edit-profile"}
             onClose={onClose}
             handleEditProfile={handleEditProfile}
+            editProfile={editProfile}
           />
           <ItemModal
             isOpen={activeModal === "preview"}

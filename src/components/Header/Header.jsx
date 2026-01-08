@@ -9,7 +9,8 @@ import logo from "../../assets/msfr__logo_small.svg";
 import defaultImage from "../../assets/default-avatar.svg";
 
 function Header({ onSignUpClick, onSignInClick, onEditProfileClick }) {
-  const { userData, isSignedIn, setIsSignedIn } = useContext(CurrentUserContext);
+  const { userData, isSignedIn, setIsSignedIn } =
+    useContext(CurrentUserContext);
   const navigate = useNavigate();
 
   function signOut() {
@@ -34,11 +35,11 @@ function Header({ onSignUpClick, onSignInClick, onEditProfileClick }) {
             >
               Sign Out
             </button>
-            <p className="header__username">Marc Pickelman</p>
+            <p className="header__username">{userData.name}</p>
             <img
               className="header__profile-image"
-              src={defaultImage}
-              alt="Marc Pickelman"
+              src={userData.image}
+              alt={userData.name}
               onClick={onEditProfileClick}
             />
           </div>

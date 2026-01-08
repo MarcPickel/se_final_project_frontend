@@ -86,7 +86,6 @@
 @media screen and (max-width: 767px) {
   .header {
     padding: 0 10px 10px;
-    flex-wrap: wrap;
   }
 
   .header__logo {
@@ -95,7 +94,7 @@
 
   .header__title {
     margin: 0 0 0 12px;
-    font-size: 20px;
+    font-size: 16px;
   }
 
   .header__sign-container {
@@ -124,5 +123,11 @@
   .header__profile-image {
     width: 35px;
     margin: 0 0 0 8px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .header {
+    flex-wrap: wrap;
   }
 }

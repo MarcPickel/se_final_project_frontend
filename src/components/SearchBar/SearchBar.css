@@ -36,13 +36,26 @@
   border: none;
 }
 
-.searchbar__button-icon {
+.searchbar__button {
+  width: 40px;
+  height: 40px;
+  padding: 0;
   position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   top: 50%;
-  right: 15px;
-  width: 20px;
+  right: 5px;
   transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  border-radius: 50%;
   cursor: pointer;
+}
+
+.searchbar__button-icon {
+  width: 20px;
+  height: 20px;
 }
 
 @media screen and (max-width: 1024px) {
@@ -68,7 +81,7 @@
     font-size: 14px;
   }
 
-  .searchbar__button-icon {
+  .searchbar__button {
     width: 18px;
     right: 12px;
   }

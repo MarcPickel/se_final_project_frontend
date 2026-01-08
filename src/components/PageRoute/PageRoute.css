@@ -32,5 +32,12 @@
 @media screen and (max-width: 1024px) {
   .page-route {
     padding: 20px;
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .page-route {
+    font-size: 16px;
   }
 }

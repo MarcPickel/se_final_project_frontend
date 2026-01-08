@@ -83,6 +83,7 @@
 }
 
 .fraternity__circle {
+  margin-bottom: 14px;
   width: 88px;
   height: 88px;
   display: flex;
@@ -122,16 +123,29 @@
 }
 
 .fraternity__icon-text {
+  margin: 0 0 14px;
   font-family: "Roboto", Arial, sans-serif;
   font-size: 20px;
 }
 
+@media screen and (max-width: 1024px) {
+  .fraternity__subtitle {
+    font-size: 24px;
+  }
+
+  .fraternity__text {
+    font-size: 16px;
+  }
+}
+
 @media screen and (max-width: 700px) {
   .fraternity-content {
+    margin: 20px 0;
     padding: 0 20px;
   }
 
   .fraternity__row {
-    gap: 20px;
+    flex-direction: column;
+    gap: 10px;
   }
 }

@@ -51,8 +51,27 @@
     align-items: center;
   }
 
+  .wisdom-virtue__subtitle {
+    font-size: 24px;
+  }
+
   .wisdom-virtue__text {
     margin: 0 0 14px;
     text-align: center;
+    font-size: 16px;
+  }
+
+  .wisdom-virtue__image {
+    width: 275px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .wisdom-virtue-content {
+    margin: 20px 0;
+  }
+
+  .wisdom-virtue__image {
+    width: 250px;
   }
 }

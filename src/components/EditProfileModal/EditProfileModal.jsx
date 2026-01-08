@@ -6,8 +6,8 @@ import { useContext, useEffect } from "react";
 
 import rudolph from "../../assets/rudolph-ii-giuseppe-arcimboldi.jpg";
 
-function EditProfileModal({ isOpen, onClose, handleEditProfile }) {
-  const defaultValues = { name: "", avatar: "" };
+function EditProfileModal({ isOpen, onClose, handleEditProfile, editProfile }) {
+  const defaultValues = { name: "", image: "" };
   const { userData } = useContext(CurrentUserContext);
 
   const { values, setValues, handleChange, handleReset } =
@@ -18,7 +18,7 @@ function EditProfileModal({ isOpen, onClose, handleEditProfile }) {
     if (isOpen && userData)
       setValues({
         name: userData.name || "",
-        avatar: userData.avatar || "",
+        image: userData.image || "",
       });
   }, [isOpen, userData]);
 

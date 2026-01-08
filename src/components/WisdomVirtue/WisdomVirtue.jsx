@@ -13,7 +13,11 @@ function WisdomVirtue() {
             exemplary man, one who has put on the armor of wisdom and armed
             himself with virtue.
           </p>
-          <img className="wisdom-virtue__image" src={knight} alt="" />
+          <img
+            className="wisdom-virtue__image"
+            src={knight}
+            alt="Man with Lance Riding through the Snow, Adoplhe Schreyer"
+          />
         </div>
       </div>
     </section>
