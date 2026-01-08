@@ -6,7 +6,6 @@ import { removeToken } from "../../utils/token";
 import CurrentUserContext from "../../contexts/CurrentUserContext.jsx";
 
 import logo from "../../assets/msfr__logo_small.svg";
-import defaultImage from "../../assets/default-avatar.svg";
 
 function Header({ onSignUpClick, onSignInClick, onEditProfileClick }) {
   const { userData, isSignedIn, setIsSignedIn } =

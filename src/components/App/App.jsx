@@ -80,10 +80,13 @@ function App() {
   };
 
   // Auth Handlers
-  const handleSignUp = ({ email, password, name, avatar }) => {
-    return auth.register(email, password, name, avatar).then(() => {
-      return handleSignIn({ email, password });
-    });
+  const handleSignUp = ({ email, password, name, image }) => {
+    return auth
+      .register(email, password, name, image)
+      .then((registeredUser) => {
+        console.log(registeredUser);
+        return handleSignIn(registeredUser);
+      });
   };
 
   const handleSignIn = ({ email, password }) => {
@@ -93,6 +96,7 @@ function App() {
 
     return auth.authorize(email, password).then((data) => {
       if (data.token) {
+        console.log(data);
         setToken(data.token);
         setUserData(data.user);
         setIsSignedIn(true);

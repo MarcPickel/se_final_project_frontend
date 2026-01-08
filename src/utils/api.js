@@ -38,8 +38,9 @@ function editProfile({ name, image }) {
   return new Promise((resolve, reject) => {
     resolve({
       _id: "65f7371e7bce9e7d331b11a0", // another one made up from the generator
-      name: name.value,
-      image: image.value,
+      name: name,
+      email: "fake@example.com",
+      image: image,
     });
   });
 }
