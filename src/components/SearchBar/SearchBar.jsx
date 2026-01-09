@@ -38,7 +38,7 @@ function SearchBar({
               className="searchbar__input"
               placeholder="Search for books..."
               minLength="1"
-              maxLength="30"
+              maxLength="150"
               value={inputValue}
               onChange={handleChange}
               onFocus={handleFocus}

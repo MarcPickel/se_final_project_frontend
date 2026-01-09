@@ -1,11 +1,19 @@
-import useForm from "../../hooks/useForm.js";
+import { useEffect } from "react";
+import useFormAndValidation from "../../hooks/useFormAndValidation.js";
 import ModalWithForm from "../ModalWithForm/ModalWithForm.jsx";
 
 import clergyman from "../../assets/young-clergyman-reading-martin-rorbye.jpg";
 
 function SignInModal({ isOpen, onClose, handleSignIn }) {
   const defaultValues = { email: "", password: "" };
-  const { values, handleChange, handleReset } = useForm(defaultValues);
+  const { values, handleChange, errors, isValid, setValues, resetForm } =
+    useFormAndValidation();
+
+  useEffect(() => {
+    if (isOpen) {
+      setValues(defaultValues);
+    }
+  }, [isOpen, setValues]);
 
   function handleSubmit(evt) {
     evt.preventDefault();
@@ -13,7 +21,7 @@ function SignInModal({ isOpen, onClose, handleSignIn }) {
     handleSignIn(values)
       .then(() => {
         onClose();
-        handleReset(evt);
+        resetForm();
       })
       .catch(console.error);
   }
@@ -28,6 +36,7 @@ function SignInModal({ isOpen, onClose, handleSignIn }) {
       onClose={onClose}
       onSubmit={handleSubmit}
       isOpen={isOpen}
+      isValid={isValid}
     >
       <label htmlFor="email-signin" className="modal__label">
         Email*
@@ -41,6 +50,7 @@ function SignInModal({ isOpen, onClose, handleSignIn }) {
           value={values.email}
           onChange={handleChange}
         />
+        {errors.email && <span className="modal__error">{errors.email}</span>}
       </label>
       <label htmlFor="password-signin" className="modal__label">
         Password*
@@ -54,6 +64,9 @@ function SignInModal({ isOpen, onClose, handleSignIn }) {
           value={values.password}
           onChange={handleChange}
         />
+        {errors.password && (
+          <span className="modal__error">{errors.password}</span>
+        )}
       </label>
     </ModalWithForm>
   );

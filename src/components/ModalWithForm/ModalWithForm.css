@@ -9,6 +9,7 @@
 
 .modal__form-content {
   padding: 20px;
+  width: 100%;
   font-family: "Roboto", Arial, sans-serif;
   color: #fff;
 }
@@ -29,11 +30,6 @@
   font-weight: bold;
 }
 
-.modal__label-error {
-  color: #ff4d00;
-  border-bottom-color: #ff4d00;
-}
-
 .modal__input {
   display: block;
   padding: 0;
@@ -42,11 +38,6 @@
   font-weight: bold;
   border: none;
   background-color: #fff;
-}
-
-.modal__input-error {
-  color: #ff4d00;
-  border-color: #ff4d00;
 }
 
 .modal__submit-button {
@@ -63,4 +54,26 @@
   background-image: linear-gradient(to right, #eb7200, #ff383c);
   box-shadow: 0 0 10px 5px #eb7200;
   cursor: pointer;
+}
+
+.modal__submit-button:disabled {
+  opacity: 0.6;
+  cursor: default;
+  background-image: none;
+  box-shadow: none;
+}
+
+.modal__error {
+  color: #d82e2e;
+  font-size: 12px;
+}
+
+@media screen and (max-width: 767px) {
+  .modal__image {
+    overflow: hidden;
+  }
+
+  .modal__form-content {
+    width: 80%;
+  }
 }

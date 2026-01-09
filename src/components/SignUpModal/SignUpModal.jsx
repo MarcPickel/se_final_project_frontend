@@ -1,11 +1,19 @@
-import useForm from "../../hooks/useForm.js";
+import { useEffect } from "react";
+import useFormAndValidation from "../../hooks/useFormAndValidation.js";
 import ModalWithForm from "../ModalWithForm/ModalWithForm.jsx";
 
 import lincoln from "../../assets/boy-lincoln-reading-eastman-johnson.jpeg";
 
 function SignUpModal({ isOpen, onClose, handleSignUp }) {
   const defaultValues = { email: "", password: "", name: "", image: "" };
-  const { values, handleChange, handleReset } = useForm(defaultValues);
+  const { values, handleChange, errors, isValid, setValues, resetForm } =
+    useFormAndValidation();
+
+  useEffect(() => {
+    if (isOpen) {
+      setValues(defaultValues);
+    }
+  }, [isOpen, setValues]);
 
   function handleSubmit(evt) {
     evt.preventDefault();
@@ -13,7 +21,7 @@ function SignUpModal({ isOpen, onClose, handleSignUp }) {
     handleSignUp(values)
       .then(() => {
         onClose();
-        handleReset(evt);
+        resetForm();
       })
       .catch(console.error);
   }
@@ -28,6 +36,7 @@ function SignUpModal({ isOpen, onClose, handleSignUp }) {
       onSubmit={handleSubmit}
       isOpen={isOpen}
       onClose={onClose}
+      isValid={isValid}
     >
       <label htmlFor="email-signup" className="modal__label">
         Email*
@@ -41,6 +50,7 @@ function SignUpModal({ isOpen, onClose, handleSignUp }) {
           value={values.email}
           onChange={handleChange}
         />
+        {errors.email && <span className="modal__error">{errors.email}</span>}
       </label>
       <label htmlFor="password-signup" className="modal__label">
         Password*
@@ -51,22 +61,28 @@ function SignUpModal({ isOpen, onClose, handleSignUp }) {
           className="modal__input"
           placeholder="Password"
           required
+          minLength="6"
           value={values.password}
           onChange={handleChange}
         />
+        {errors.password && (
+          <span className="modal__error">{errors.password}</span>
+        )}
       </label>
       <label htmlFor="name-signup" className="modal__label">
         Name*
         <input
           id="name-signup"
-          type="name"
+          type="text"
           name="name"
           className="modal__input"
           placeholder="Name"
           required
+          minLength="2"
           value={values.name}
           onChange={handleChange}
         />
+        {errors.name && <span className="modal__error">{errors.name}</span>}
       </label>
       <label htmlFor="image-signup" className="modal__label">
         Profile URL*
@@ -80,6 +96,7 @@ function SignUpModal({ isOpen, onClose, handleSignUp }) {
           value={values.image}
           onChange={handleChange}
         />
+        {errors.image && <span className="modal__error">{errors.image}</span>}
       </label>
     </ModalWithForm>
   );
