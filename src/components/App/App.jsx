@@ -6,6 +6,11 @@ import Header from "../Header/Header.jsx";
 import Navigation from "../Navigation/Navigation.jsx";
 import Main from "../Main/Main.jsx";
 import Library from "../Library/Library.jsx";
+import MyBooks from "../MyBooks/MyBooks.jsx";
+import ThisYears from "../ThisYears/ThisYears.jsx";
+import WarriorPoets from "../WarriorPoets/WarriorPoets.jsx";
+import FAQ from "../FAQ/FAQ.jsx";
+import About from "../About/About.jsx";
 import Footer from "../Footer/Footer.jsx";
 
 import SignUpModal from "../SignUpModal/SignUpModal.jsx";
@@ -223,6 +228,11 @@ function App() {
               }
             ></Route>
           </Routes>
+          <Route path="/mybooks" element={MyBooks}></Route>
+          <Route path="/thisyears" element={ThisYears}></Route>
+          <Route path="/warriorpoets" element={WarriorPoets}></Route>
+          <Route path="/faq" element={FAQ}></Route>
+          <Route path="/about" element={About}></Route>
           <Footer />
 
           <SignUpModal
