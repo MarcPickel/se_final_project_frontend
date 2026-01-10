@@ -15,9 +15,9 @@ function Navigation() {
   const getActiveTabFromPath = () => {
     const path = location.pathname;
     if (path === "/library") return "library";
-    if (path === "/mybooks") return "mybooks";
-    if (path === "/thisyears") return "thisyears";
-    if (path === "/warriorpoets") return "warriorpoets";
+    if (path === "/mybooks") return "myBooks";
+    if (path === "/thisyears") return "thisYears";
+    if (path === "/warriorpoets") return "warriorPoets";
     if (path === "/faq") return "faq";
     if (path === "/about") return "about";
 

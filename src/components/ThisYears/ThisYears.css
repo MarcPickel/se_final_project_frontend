@@ -1,0 +1,124 @@
+@font-face {
+  src: url("../../vendor/fonts/Roboto/Roboto-VariableFont_wdth,wght.ttf");
+  font-family: "Roboto";
+}
+
+.this-years {
+  background-color: #e3e3e3;
+}
+
+.this-years__annual-section {
+  padding: 20px;
+  font-family: "Roboto", Arial, sans-serif;
+}
+
+.this-years__header {
+  margin: 0 0 20px;
+  text-align: center;
+  font-weight: 500;
+  font-size: 32px;
+}
+
+.this-years__container {
+  padding: 10px 0;
+  border-top: 1px solid #000;
+}
+
+.this-years__container-specifics {
+  display: flex;
+  align-items: start;
+}
+
+.this-years__month {
+  margin: 0 0 10px;
+  font-weight: 600;
+}
+
+.this-years__image {
+  width: 150px;
+}
+
+.this-years__content {
+  margin-left: 14px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.this-years__content-specifics {
+  margin: 0 0 16px;
+}
+
+.this-years__title {
+  margin: 0 0 8px;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.this-years__author {
+  margin: 0 0 4px;
+}
+
+.this-years__translator {
+  margin: 0 0 4px;
+}
+
+.this-years__description {
+  margin: 0;
+}
+
+.this-years__text-break {
+  visibility: hidden;
+}
+
+@media screen and (max-width: 1024px) {
+  .this-years__image {
+    width: 125px;
+  }
+
+  .this-years__header {
+    font-size: 24px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .this-years__annual-section {
+    padding: 10px;
+  }
+
+  .this-years__header {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  .this-years__container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .this-years__image {
+    margin-bottom: 10px;
+  }
+
+  .this-years__content {
+    margin: 0;
+    align-items: center;
+  }
+
+  .this-years__title {
+    font-size: 16px;
+  }
+
+  .this-years__author {
+    font-size: 14px;
+  }
+
+  .this-years__translator {
+    font-size: 14px;
+  }
+
+  .this-years__description {
+    width: 250px;
+    font-size: 14px;
+  }
+}

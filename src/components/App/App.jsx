@@ -227,12 +227,12 @@ function App() {
                 />
               }
             ></Route>
+            <Route path="/mybooks" element={<MyBooks />}></Route>
+            <Route path="/thisyears" element={<ThisYears />}></Route>
+            <Route path="/warriorpoets" element={<WarriorPoets />}></Route>
+            <Route path="/faq" element={<FAQ />}></Route>
+            <Route path="/about" element={<About />}></Route>
           </Routes>
-          <Route path="/mybooks" element={MyBooks}></Route>
-          <Route path="/thisyears" element={ThisYears}></Route>
-          <Route path="/warriorpoets" element={WarriorPoets}></Route>
-          <Route path="/faq" element={FAQ}></Route>
-          <Route path="/about" element={About}></Route>
           <Footer />
 
           <SignUpModal
