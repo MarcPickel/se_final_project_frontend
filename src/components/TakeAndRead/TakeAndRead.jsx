@@ -1,7 +1,7 @@
 import "./TakeAndRead.css";
 
 import JoinButton from "../JoinButton/JoinButton.jsx";
-import augustine from "../../assets/saint_augustine_by_philippe_de_champaigne.jpg";
+import augustine from "../../assets/saint-augustine-in-the-garden.jpg";
 
 function TakeAndRead({ onSignUpClick }) {
   return (

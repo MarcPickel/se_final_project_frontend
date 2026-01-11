@@ -5,7 +5,7 @@ import { getToken } from "../../utils/token.js";
 import CurrentUserContext from "../../contexts/CurrentUserContext.jsx";
 import { useContext, useEffect } from "react";
 
-import rudolph from "../../assets/rudolph-ii-giuseppe-arcimboldi.jpg";
+import rudolf from "../../assets/rudolf-ii-giuseppe-arcimboldo.jpg";
 
 function EditProfileModal({ isOpen, onClose, handleEditProfile, editProfile }) {
   const { userData } = useContext(CurrentUserContext);
@@ -35,7 +35,7 @@ function EditProfileModal({ isOpen, onClose, handleEditProfile, editProfile }) {
 
   return (
     <ModalWithForm
-      image={rudolph}
+      image={rudolf}
       alt="Rudolph II, Giuseppe Arcimboldi"
       name="edit-profile"
       title="Edit Profile"

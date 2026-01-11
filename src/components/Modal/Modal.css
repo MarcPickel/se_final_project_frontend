@@ -21,12 +21,13 @@
   max-width: 725px;
   max-height: 90vh;
   width: 100%;
-  height: 50%;
+  height: auto; /* Changed from 50% to auto - allows content-based sizing */
   box-sizing: border-box;
   background-color: #222;
   border-radius: 20px;
   display: flex;
-  overflow: hidden;
+  overflow-y: auto; /* Changed from hidden to auto - allows scrolling if content exceeds max-height */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 .modal__close {
@@ -41,6 +42,7 @@
   opacity: 0.6;
   border: none;
   cursor: pointer;
+  z-index: 1; /* Ensure close button stays on top when scrolling */
 }
 
 .modal__close:hover {
