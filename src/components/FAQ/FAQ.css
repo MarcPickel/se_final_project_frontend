@@ -1,0 +1,11 @@
+@font-face {
+  src: url("../../vendor/fonts/Roboto/Roboto-VariableFont_wdth,wght.ttf");
+  font-family: "Roboto";
+}
+
+.faq {
+  padding: 20px;
+  background-color: #e3e3e3;
+  color: #000;
+  font-family: "Roboto", Arial, sans-serif;
+}
