@@ -2,40 +2,59 @@ import "./FAQ.css";
 
 import pilate from "../../assets/jesus-before-pilate-first-interview-tissot.jpg";
 
-function FAQ() {
+function FAQ({ activeIndex, setActiveIndex }) {
+  function handlePanel(index) {
+    // Toggle: if clicking the same accordion, close it; otherwise open the clicked one
+    setActiveIndex(activeIndex === index ? null : index);
+  }
+
   return (
     <div>
       <section className="faq">
-        <h1 className="faq__header">Quid est veritas?</h1>
-        <p className="faq__text_italic">John 18:38</p>
-        <img
-          className="faq__image"
-          src={pilate}
-          alt="Jesus Before Pilate, First Interview, by Tissot"
-        />
-        <p className="faq__text">
-          &quot;What is truth?&quot; asked Pilate, who could not even recognize
-          He Who is Truth standing before him in his chambers. How too often is
-          that which we are looking for under our noses? And, for that matter,
-          what are goodness and beauty? Man longs to know these objective
-          realities, and every man is capable of knowing them. Man&apos;s Search
-          For Reading hopes to provide you with adequate answers or meet you at
-          the start of your journey.
-        </p>
-        <p>
-          Definitions are from the
-          <a
-            href="https://cardinalnewmansociety.org/educating-to-truth-beauty-and-goodness-2/?gad_source=1&gad_campaignid=17907630441&gbraid=0AAAAADFYrY8arSUKLEpqvMeQZd1jevFBF&gclid=CjwKCAiAjojLBhAlEiwAcjhrDiU4fIE4jzKUoHQe676Nebh-QtadPE0d73dVNRkpbKqtwkVIwVpQHRoCOf4QAvD_BwE#easy-footnote-bottom-14-1129"
-            className="faq__link"
-          >
-            the Cardinal Newman Society.
-          </a>
-        </p>
+        <div className="faq__content">
+          <h1 className="faq__header">Quid est veritas?</h1>
+          <p className="faq__text faq__text_italic">John 18:38</p>
+          <img
+            className="faq__image"
+            src={pilate}
+            alt="Jesus Before Pilate, First Interview, by Tissot"
+          />
+          <p className="faq__text">
+            &quot;What is truth?&quot; asked Pilate, who could not even
+            recognize He Who is Truth standing before him in his chambers. How
+            too often is that which we are looking for under our noses? And, for
+            that matter, what are goodness and beauty? Man longs to know these
+            objective realities, and every man is capable of knowing them.
+            Man&apos;s Search For Reading hopes to provide you with adequate
+            answers or meet you at the start of your journey.
+          </p>
+          <p className="faq__text">
+            Definitions are from&nbsp;
+            <a
+              href="https://cardinalnewmansociety.org/educating-to-truth-beauty-and-goodness-2/?gad_source=1&gad_campaignid=17907630441&gbraid=0AAAAADFYrY8arSUKLEpqvMeQZd1jevFBF&gclid=CjwKCAiAjojLBhAlEiwAcjhrDiU4fIE4jzKUoHQe676Nebh-QtadPE0d73dVNRkpbKqtwkVIwVpQHRoCOf4QAvD_BwE#easy-footnote-bottom-14-1129"
+              className="faq__link"
+              target="_blank"
+            >
+              the Cardinal Newman Society.
+            </a>
+          </p>
+        </div>
 
-        <div>
-          <button className="faq__accordion">What is truth?</button>
-          <div className="faq__panel">
-            <p>
+        <div className="faq__container">
+          <button
+            className={`faq__accordion ${
+              activeIndex === 0 ? "faq__accordion_active" : ""
+            }`}
+            onClick={() => handlePanel(0)}
+          >
+            What is truth?
+          </button>
+          <div
+            className={`faq__panel ${
+              activeIndex === 0 ? "faq__panel_active" : ""
+            }`}
+          >
+            <p className="faq__text">
               &quot;A simple definition for truth is the mind being in accord
               with reality. We seek always to place our students and ourselves
               in proper relationship with the truth. Nothing we do can ever be
@@ -48,7 +67,8 @@ function FAQ() {
               discussion, we believe that an object under discussion may
               manifest itself in its various relations, either directly or
               indirectly, to the mind.
-              <hr className="faq__text-break" />
+            </p>
+            <p className="faq__text">
               &quot;We believe that Man tends by nature toward the truth. Even
               though due to our fallen nature we may sometimes seek to ignore or
               obfuscate the truth, we are nonetheless obliged to honor and bear
@@ -69,9 +89,20 @@ function FAQ() {
               of error, ugliness, and sin.&quot;
             </p>
           </div>
-          <button className="faq__accordion">What is goodness?</button>
-          <div className="faq__panel">
-            <p>
+          <button
+            className={`faq__accordion ${
+              activeIndex === 1 ? "faq__accordion_active" : ""
+            }`}
+            onClick={() => handlePanel(1)}
+          >
+            What is goodness?
+          </button>
+          <div
+            className={`faq__panel ${
+              activeIndex === 1 ? "faq__panel_active" : ""
+            }`}
+          >
+            <p className="faq__text">
               &quot;When we explore issues of goodness with our students, we are
               fundamentally asking them to consider questions of how well
               someone or something fulfills its purpose. Goodness is understood
@@ -84,7 +115,8 @@ function FAQ() {
               what is a good law, a good government, a good father, or a good
               man, the discussion quickly grows richer, deeper, and more
               complex.
-              <hr className="faq__text-break" />
+            </p>
+            <p className="faq__text">
               &quot;As Catholic educators, our goal is to help our students to
               become good persons. Among those qualities we deem good are
               wisdom, faithfulness, and virtue. Virtue is a habitual and firm
@@ -93,7 +125,8 @@ function FAQ() {
               powers and perfections as man. Such efforts raise fundamental
               questions of what it means to be human and our relationships with
               each other, the created world, and God.
-              <hr className="faq__text-break" />
+            </p>
+            <p className="faq__text">
               &quot;God, through reason and revelation, has not left us blind on
               these issues, nor has He left us up to our own subjective devices.
               It is a fundamental responsibility of the Catholic school to teach
@@ -106,9 +139,20 @@ function FAQ() {
             </p>
           </div>
 
-          <button className="faq__accordion">What is beauty?</button>
-          <div className="faq__panel">
-            <p>
+          <button
+            className={`faq__accordion ${
+              activeIndex === 2 ? "faq__accordion_active" : ""
+            }`}
+            onClick={() => handlePanel(2)}
+          >
+            What is beauty?
+          </button>
+          <div
+            className={`faq__panel ${
+              activeIndex === 2 ? "faq__panel_active" : ""
+            }`}
+          >
+            <p className="faq__text">
               &quot;Beauty can help evoke wonder and delight, which are
               foundations of a life of wisdom and inquiry. Beauty involves
               apprehending unity, harmony, proportion, wholeness, and radiance.
@@ -119,7 +163,8 @@ function FAQ() {
               be understood as a type of inner radiance or shine coming from a
               thing that is well-ordered to its state of being or is true to its
               nature or form.
-              <hr className="faq__text-break" />
+            </p>
+            <p className="faq__text">
               &quot;Beauty pleases not only the eye or ear, but also the
               intellect in a celebration of the integrity of our body and soul.
               It can be seen as a sign of God&apos;s goodness, benevolence and

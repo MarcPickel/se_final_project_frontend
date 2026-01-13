@@ -39,6 +39,7 @@ import { setToken, getToken, removeToken } from "../../utils/token.js";
 function App() {
   const [isActive, setIsActive] = useState(false);
   const [activeModal, setActiveModal] = useState("");
+  const [activeIndex, setActiveIndex] = useState(null);
   const [selectedCard, setSelectedCard] = useState({});
   const [bookItems, setBookItems] = useState([]);
   const [searchError, setSearchError] = useState(null);
@@ -230,7 +231,15 @@ function App() {
             <Route path="/mybooks" element={<MyBooks />}></Route>
             <Route path="/thisyears" element={<ThisYears />}></Route>
             <Route path="/warriorpoets" element={<WarriorPoets />}></Route>
-            <Route path="/faq" element={<FAQ />}></Route>
+            <Route
+              path="/faq"
+              element={
+                <FAQ
+                  activeIndex={activeIndex}
+                  setActiveIndex={setActiveIndex}
+                />
+              }
+            ></Route>
             <Route path="/about" element={<About />}></Route>
           </Routes>
           <Footer />

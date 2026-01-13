@@ -1,0 +1,80 @@
+@font-face {
+  src: url("../../vendor/fonts/Roboto/Roboto-VariableFont_wdth,wght.ttf")
+    format("truetype");
+  font-family: "Roboto";
+  font-weight: 100 900;
+  font-stretch: 75% 100%;
+}
+
+.warrior-poets {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #e3e3e3;
+  color: #000;
+  font-family: "Roboto", Arial, sans-serif;
+}
+
+.warrior-poets__main-header {
+  margin: 0 0 10px;
+}
+
+.warrior-poets__header {
+  margin: 0 0 14px;
+}
+
+.warrior-poets__text {
+  margin: 0 0 10px;
+}
+
+.warrior-poets__text_italic {
+  font-style: italic;
+}
+
+.warrior-poets__image {
+  margin-right: 14px;
+  width: 400px;
+  height: 300px;
+}
+
+.warrior-poets__container {
+  margin-bottom: 20px;
+  display: flex;
+  border-bottom: solid 1px #000;
+}
+
+.warrior-poets__container:last-of-type {
+  border-bottom: none;
+}
+
+.warrior-poets__content_top {
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 90%;
+  border-bottom: solid 1px #000;
+}
+
+.warrior-poets__content {
+  margin-right: 10px;
+}
+
+.warrior-poets__link {
+  color: #000;
+  font-weight: 500;
+}
+
+@media screen and (max-width: 747px) {
+  .warrior-poets__container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .warrior-poets__image {
+    margin: 0 0 14px;
+    width: 250px;
+    height: 200px;
+  }
+}

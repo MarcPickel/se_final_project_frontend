@@ -30,24 +30,30 @@ function About() {
               of us were already reading serious books on our own and having
               good conversations, but we felt something was missing, namely, a
               shared commitment and a space where men could read together with
-              intention. Viktor Frankl&apos;s &quot;Man&apos;s Search for
-              Meaning&quot; was a big influence for me personally, especially
-              the idea that meaning isn&apos;t something you invent, but
-              something you respond to. The name came out of that
-              conviction.&quot;
-              <hr className="about__text-break" />
-              - Tyler Supalla
-              <hr className="about__text-break" />
+              intention. Viktor Frankl&apos;s{" "}
+              <span className="about__text about__text_italic">
+                &#160;Man&apos;s Search for Meaning&#160;
+              </span>
+              was a big influence for me personally, especially the idea that
+              meaning isn&apos;t something you invent, but something you respond
+              to. The name came out of that conviction.&quot;
+            </p>
+
+            <p className="about__text">- Tyler Supalla</p>
+
+            <p className="about__text">
               As it presently stands, Man&apos;s Search For Reading began in
               Kansas City, Missouri with Tyler Supalla. After meeting success
               there, the idea was proposed by his sister to start a group in
               Sioux Falls, South Dakota, led by Marc Pickelman.
-              <hr className="about__text-break" />
+            </p>
+
+            <p className="about__text">
               Marc Pickelman was born and raised in the Midwest. He applies
               himself to both intellectual pursuits and the Trades. He would see
               that every man, white-collar and blue-collar, could sit in the
               same room, realizing their equality in Jesus Christ, to share in
-              their love for God and for reading good books.
+              their love for God, for each other, and for reading good books.
             </p>
           </div>
           <img className="about__image" src={mp} alt="" />
