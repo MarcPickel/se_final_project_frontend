@@ -1,0 +1,40 @@
+.saved-books-section {
+  padding: 0 0 20px;
+  height: 100%;
+  background-color: #fff;
+  width: 100%;
+}
+
+.saved-books-section__items {
+  margin: 0;
+  padding: 20px;
+  width: 100%;
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  box-sizing: border-box;
+  justify-items: start;
+}
+
+.saved-books-section__items > li {
+  width: 100%;
+  max-width: 100%;
+  justify-self: stretch;
+}
+
+@media screen and (max-width: 1024px) {
+  .saved-books-section__items {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 15px;
+    padding: 15px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .saved-books-section__items {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 12px;
+    padding: 12px;
+  }
+}

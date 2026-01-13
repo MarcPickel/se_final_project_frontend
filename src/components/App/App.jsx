@@ -33,6 +33,7 @@ import { editProfile } from "../../utils/api.js";
 import * as auth from "../../utils/auth.js";
 
 import CurrentUserContext from "../../contexts/CurrentUserContext.jsx";
+import ProtectedRoute from "../ProtectedRoute/ProtectedRoute.jsx";
 
 import { setToken, getToken, removeToken } from "../../utils/token.js";
 
@@ -42,6 +43,7 @@ function App() {
   const [activeIndex, setActiveIndex] = useState(null);
   const [selectedCard, setSelectedCard] = useState({});
   const [bookItems, setBookItems] = useState([]);
+  const [savedItems, setSavedItems] = useState([]);
   const [searchError, setSearchError] = useState(null);
 
   const [userData, setUserData] = useState(null);
@@ -90,7 +92,6 @@ function App() {
     return auth
       .register(email, password, name, image)
       .then((registeredUser) => {
-        console.log(registeredUser);
         return handleSignIn(registeredUser);
       });
   };
@@ -102,7 +103,6 @@ function App() {
 
     return auth.authorize(email, password).then((data) => {
       if (data.token) {
-        console.log(data);
         setToken(data.token);
         setUserData(data.user);
         setIsSignedIn(true);
@@ -145,20 +145,48 @@ function App() {
     onClose();
   };
 
-  {
-    // This would be a good useEffect for the MyBooks Page,
-    // because it would check the Database through the API to fetch the saved books
-    /*useEffect(() => {
-    const classics = "classics";
+  // Save Book Functionality
 
-    getSubject(classics)
-      .then((data) => {
-        const itemsArray = Array.isArray(data?.data) ? data.data : [];
-        setBookItems(itemsArray);
-      })
-      .catch(console.error);
-  }, []);*/
-  }
+  const onCardSave = (newItem) => {
+    const isAlreadySaved = savedItems.some((savedItem) => {
+      if (newItem.key && savedItem.key) {
+        return savedItem.key === newItem.key;
+      }
+
+      if (newItem._id && savedItem._id) {
+        return savedItem._id === newItem._id;
+      }
+
+      return (
+        savedItem.title === newItem.title && savedItem.author === newItem.author
+      );
+    });
+
+    if (isAlreadySaved) {
+      setSavedItems(
+        savedItems.filter((savedItem) => {
+          if (newItem.key && savedItem.key) {
+            return savedItem.key !== newItem.key;
+          }
+          if (newItem._id && savedItem._id) {
+            return savedItem._id !== newItem._id;
+          }
+          return !(
+            savedItem.title === newItem.title &&
+            savedItem.author === newItem.author
+          );
+        })
+      );
+    } else {
+      if (userData) {
+        const itemToSave = {
+          ...newItem,
+          owner: userData._id || userData.id,
+        };
+        setSavedItems([itemToSave, ...savedItems]);
+      }
+    }
+  };
 
   // Search Functionability
 
@@ -225,10 +253,19 @@ function App() {
                   setIsActive={setIsActive}
                   onCardClick={handleCardClick}
                   searchError={searchError}
+                  onCardSave={onCardSave}
+                  savedItems={savedItems}
                 />
               }
             ></Route>
-            <Route path="/mybooks" element={<MyBooks />}></Route>
+            <Route
+              path="/mybooks"
+              element={
+                <ProtectedRoute>
+                  <MyBooks savedItems={savedItems} onCardSave={onCardSave} />
+                </ProtectedRoute>
+              }
+            ></Route>
             <Route path="/thisyears" element={<ThisYears />}></Route>
             <Route path="/warriorpoets" element={<WarriorPoets />}></Route>
             <Route

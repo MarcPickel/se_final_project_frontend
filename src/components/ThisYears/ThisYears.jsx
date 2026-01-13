@@ -41,7 +41,8 @@ function ThisYears() {
                 masterpiece. In this acclaimed new translation by Bernanos
                 scholar Michael R. Tobin, the full, unabridged work is made
                 available to English-language readers for the first time.
-                <hr className="this-years__text-break" />
+              </p>
+              <p className="this-years__description">
                 Set in rural France, the novel recounts the joys and travails of
                 a young parish priest, tormented by illness and afflicted by
                 awkwardness, as he deals with a colorful cast of local
@@ -112,7 +113,8 @@ function ThisYears() {
                 for locally relevant poems, Service at first wrote verse for the
                 local saloon, whose patrons yearned for original entertainment
                 each evening.
-                <hr className="this-years__text-break" />
+              </p>
+              <p className="this-years__description">
                 After meeting with approval here, Service pursued the idea
                 further - he spoke with locals and heard their stories. He would
                 also venture out into the beautiful wilds of Yukon, and using
@@ -120,7 +122,8 @@ function ThisYears() {
                 the many anecdotes Robert Service used to inspire his verse were
                 unlikely to have occurred, they were all good stories
                 representative of Yukon culture.
-                <hr className="this-years__text-break" />
+              </p>
+              <p className="this-years__description">
                 Sending a book of his verses south for publication, it was there
                 that Service met with great acclaim. William Briggs, the
                 Toronto-based publisher sought by Service's father realized that
@@ -151,7 +154,8 @@ function ThisYears() {
                 is to return to men a sense of their worth as men and to give to
                 boys the noble aim of manliness, an aim which is their due by
                 right.
-                <hr className="this-years__text-break" />
+              </p>
+              <p className="this-years__description">
                 One of the most courageous and penetrating writers of our time,
                 Anthony Esolen shows that men and women would both be happier if
                 men came to a just appraisal of their worth. The manhood he
@@ -304,7 +308,8 @@ function ThisYears() {
                 life of the great saint himself, including the blessed
                 blueprint, the sacred shopping list, and the hallowed shrine of
                 the Fallout Shelter.
-                <hr className="this-years__text-break" />
+              </p>
+              <p className="this-years__description">
                 In a terrifying age of darkness and decay, these artifacts could
                 be the keys to mankind's salvation. But as the mystery at the
                 core of this groundbreaking novel unfolds, it is the search

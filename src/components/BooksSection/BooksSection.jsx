@@ -4,9 +4,14 @@ import ItemCard from "../ItemCard/ItemCard.jsx";
 import Preloader from "../Preloader/Preloader.jsx";
 
 import { useState, useEffect } from "react";
-import CurrentUserContext from "../../contexts/CurrentUserContext.jsx";
 
-function BooksSection({ bookItems, onCardClick, onCardSave, searchError }) {
+function BooksSection({
+  bookItems,
+  onCardClick,
+  onCardSave,
+  searchError,
+  savedItems,
+}) {
   const [isLoading, setIsLoading] = useState(true);
   const [data, setData] = useState(null);
   const [booksToShow, setBooksToShow] = useState(3);
@@ -53,6 +58,7 @@ function BooksSection({ bookItems, onCardClick, onCardSave, searchError }) {
                     item={item}
                     onCardClick={onCardClick}
                     onCardSave={onCardSave}
+                    savedItems={savedItems}
                   />
                 );
               })}

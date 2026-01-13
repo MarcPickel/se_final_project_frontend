@@ -1,0 +1,10 @@
+.my-books {
+  display: flex;
+  background-color: #fff;
+  width: 100%;
+}
+
+.my-books__saved-books-section {
+  width: 100%;
+  flex: 1;
+}

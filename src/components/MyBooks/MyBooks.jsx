@@ -1,10 +1,13 @@
 import "./MyBooks.css";
 
-function MyBooks() {
+import SavedBooks from "../SavedBooksSection/SavedBooksSection.jsx";
+
+function MyBooks({ savedItems, onCardSave }) {
   return (
     <div className="my-books">
-      <section className="my-books__sidebar"></section>
-      <section className="my-books__saved-books-section"></section>
+      <section className="my-books__saved-books-section">
+        <SavedBooks savedItems={savedItems} onCardSave={onCardSave} />
+      </section>
     </div>
   );
 }

@@ -64,11 +64,11 @@
 }
 
 .this-years__translator {
-  margin: 0 0 4px;
+  margin: 0;
 }
 
 .this-years__description {
-  margin: 0;
+  margin: 0 0 14px;
 }
 
 .this-years__text-break {

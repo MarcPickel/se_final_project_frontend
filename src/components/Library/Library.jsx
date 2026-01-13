@@ -5,12 +5,6 @@ import BooksSection from "../BooksSection/BooksSection.jsx";
 
 import { useEffect } from "react";
 
-{
-  /*import { NavLink } from "react-router-dom";
-import { useContext } from "react";
-import CurrentUserContext from "../../contexts/CurrentUserContext.jsx";*/
-}
-
 function Library({
   onCardClick,
   bookItems,
@@ -21,6 +15,7 @@ function Library({
   isActive,
   setIsActive,
   searchError,
+  savedItems,
 }) {
   // Auto Scroll to Top on Page Entry
   useEffect(() => {
@@ -44,6 +39,7 @@ function Library({
           bookItems={bookItems}
           onCardSave={onCardSave}
           searchError={searchError}
+          savedItems={savedItems}
         />
       </section>
     </div>

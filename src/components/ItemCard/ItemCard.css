@@ -7,7 +7,8 @@
 }
 
 .card {
-  width: 200px;
+  width: 100%;
+  max-width: 200px;
 }
 
 .card:hover {
@@ -22,6 +23,7 @@
   justify-content: center;
   align-items: center;
   background-color: #fefdf8;
+  position: relative;
 }
 
 .card__image {
@@ -41,6 +43,34 @@
 
 .card__text {
   margin: 0;
+}
+
+.card__save-button {
+  margin: 0;
+  padding: 0;
+  width: 48px;
+  height: 48px;
+  border: none;
+  background: transparent url(../../assets/bookmark-icon.svg) center no-repeat;
+  opacity: 0.4;
+  position: absolute;
+  top: 5px;
+  right: -2px;
+}
+
+.card__save-button:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.card__save-button_active {
+  background: url(../../assets/bookmark-icon-active.svg);
+  opacity: 1;
+}
+
+.card__save-button_active:hover {
+  opacity: 0.4;
+  cursor: pointer;
 }
 
 /* Tablet styles */
