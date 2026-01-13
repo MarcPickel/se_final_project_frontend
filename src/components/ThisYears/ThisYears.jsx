@@ -1,5 +1,7 @@
 import "./ThisYears.css";
 
+import { useEffect } from "react";
+
 import diary from "../../assets/diary-of-a-country-priest-gb-mt.jpg";
 import confessions from "../../assets/confessions-st-augustine.jpg";
 import service from "../../assets/collected-verse-robert-w-service.jpg";
@@ -12,6 +14,10 @@ import leibowitz from "../../assets/a-canticle-for-leibowitz.jpg";
 import frost from "../../assets/poetry-of-robert-frost.jpg";
 
 function ThisYears() {
+  // Auto Scroll to Top on Page Entry
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className="this-years">
       <section className="this-years__annual-section">

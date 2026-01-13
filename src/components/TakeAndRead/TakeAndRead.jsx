@@ -6,7 +6,7 @@ import augustine from "../../assets/saint-augustine-in-the-garden.jpg";
 function TakeAndRead({ onSignUpClick }) {
   return (
     <section className="take-and-read">
-      <div className="take-and-read-content">
+      <div className="take-and-read__content">
         <img
           className="take-and-read__image"
           src={augustine}

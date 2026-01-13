@@ -1,10 +1,16 @@
 import "./WarriorPoets.css";
 
+import { useEffect } from "react";
+
 import frost from "../../assets/robert-frost.jpg";
 import sandburg from "../../assets/carl-sandburg.jpg";
 import longfellow from "../../assets/henry-wadsworth-longfellow.jpg";
 
 function WarriorPoets() {
+  // Auto Scroll to Top on Page Entry
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div>
       <section className="warrior-poets">

@@ -14,9 +14,9 @@ function Main({ onSignUpClick }) {
       <Introduction onSignUpClick={onSignUpClick} />
       <PageRoute text={"Start searching for good books"} route={"/library"} />
       <CristoCentric />
-      <PageRoute text={"Learn about warrior poets"} route={"/warriorpoet"} />
+      <PageRoute text={"Learn about warrior poets"} route={"/warriorPoets"} />
       <Fraternity onSignUpClick={onSignUpClick} />
-      <PageRoute text={"Check out this year's line-up"} route={"/thisyears"} />
+      <PageRoute text={"Check out this year's line-up"} route={"/thisYears"} />
       <WisdomVirtue />
       <PageRoute text={"Want to learn more?"} route={"/about"} />
       <TakeAndRead onSignUpClick={onSignUpClick} />

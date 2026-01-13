@@ -5,7 +5,7 @@ import knight from "../../assets/adolphe-schreyer-man-with-lance-riding-through-
 function WisdomVirtue() {
   return (
     <section className="wisdom-virtue">
-      <div className="wisdom-virtue-content">
+      <div className="wisdom-virtue__content">
         <h2 className="wisdom-virtue__subtitle">Wisdom and virtue</h2>
         <div className="wisdom-virtue__row">
           <p className="wisdom-virtue__text">
