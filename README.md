@@ -31,4 +31,4 @@ https://github.com/MarcPickel/se_final_project_frontend.git
 ## Project Pitch Video
 
 Check out [this video](https://drive.google.com/file/d/1WDIjVybsAaryDnsf9aA9cQVxOphYNGKA/view?usp=sharing), where I describe my
-thirteenth project and some challenges I faced while building it.
+sixteenth project and some challenges I faced while building it.
